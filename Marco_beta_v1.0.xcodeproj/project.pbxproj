@@ -7,14 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35A2A8F31E498BBC00036523 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2A8F21E498BBC00036523 /* MapViewController.swift */; };
+		35A2A8F51E49958900036523 /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8F41E49958900036523 /* MapStyle.json */; };
+		35A2A8FA1E49ABD500036523 /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8F71E49ABD500036523 /* Spoqa Han Sans Bold.ttf */; };
+		35A2A8FB1E49ABD500036523 /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8F81E49ABD500036523 /* Spoqa Han Sans Regular.ttf */; };
+		35A2A8FC1E49ABD500036523 /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8F91E49ABD500036523 /* Spoqa Han Sans Thin.ttf */; };
+		35A2A9071E49ABE200036523 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8FD1E49ABE200036523 /* Lato-Black.ttf */; };
+		35A2A9081E49ABE200036523 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8FE1E49ABE200036523 /* Lato-BlackItalic.ttf */; };
+		35A2A9091E49ABE200036523 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8FF1E49ABE200036523 /* Lato-Bold.ttf */; };
+		35A2A90A1E49ABE200036523 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9001E49ABE200036523 /* Lato-BoldItalic.ttf */; };
+		35A2A90B1E49ABE200036523 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9011E49ABE200036523 /* Lato-Hairline.ttf */; };
+		35A2A90C1E49ABE200036523 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9021E49ABE200036523 /* Lato-HairlineItalic.ttf */; };
+		35A2A90D1E49ABE200036523 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9031E49ABE200036523 /* Lato-Italic.ttf */; };
+		35A2A90E1E49ABE200036523 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9041E49ABE200036523 /* Lato-Light.ttf */; };
+		35A2A90F1E49ABE200036523 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9051E49ABE200036523 /* Lato-LightItalic.ttf */; };
+		35A2A9101E49ABE200036523 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9061E49ABE200036523 /* Lato-Regular.ttf */; };
 		35E74DB61E4880C20014A1BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E74DB51E4880C20014A1BB /* AppDelegate.swift */; };
 		35E74DB81E4880C20014A1BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E74DB71E4880C20014A1BB /* ViewController.swift */; };
 		35E74DBB1E4880C20014A1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DB91E4880C20014A1BB /* Main.storyboard */; };
 		35E74DBD1E4880C20014A1BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DBC1E4880C20014A1BB /* Assets.xcassets */; };
 		35E74DC01E4880C20014A1BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */; };
+		8EFAC06944620C02BAA16D06 /* libPods-Marco_beta_v1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35A2A8F21E498BBC00036523 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		35A2A8F41E49958900036523 /* MapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
+		35A2A8F71E49ABD500036523 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
+		35A2A8F81E49ABD500036523 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
+		35A2A8F91E49ABD500036523 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		35A2A8FD1E49ABE200036523 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		35A2A8FE1E49ABE200036523 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		35A2A8FF1E49ABE200036523 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		35A2A9001E49ABE200036523 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		35A2A9011E49ABE200036523 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		35A2A9021E49ABE200036523 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		35A2A9031E49ABE200036523 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		35A2A9041E49ABE200036523 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		35A2A9051E49ABE200036523 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		35A2A9061E49ABE200036523 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		35A2A9141E49B57D00036523 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		35E74DB21E4880C20014A1BB /* Marco_beta_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marco_beta_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E74DB51E4880C20014A1BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35E74DB71E4880C20014A1BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +54,11 @@
 		35E74DBC1E4880C20014A1BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E74DBF1E4880C20014A1BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35E74DC11E4880C20014A1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35E74DC71E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		35E74DC81E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4A0759909D31167C33412348 /* Pods-Marco_beta_v1.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco_beta_v1.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.debug.xcconfig"; sourceTree = "<group>"; };
+		9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Marco_beta_v1.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3062667DA701704ED812835 /* Pods-Marco_beta_v1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco_beta_v1.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +66,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFAC06944620C02BAA16D06 /* libPods-Marco_beta_v1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A2A8F61E49ABAE00036523 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				35A2A8F71E49ABD500036523 /* Spoqa Han Sans Bold.ttf */,
+				35A2A8F81E49ABD500036523 /* Spoqa Han Sans Regular.ttf */,
+				35A2A8F91E49ABD500036523 /* Spoqa Han Sans Thin.ttf */,
+				35A2A8FD1E49ABE200036523 /* Lato-Black.ttf */,
+				35A2A8FE1E49ABE200036523 /* Lato-BlackItalic.ttf */,
+				35A2A8FF1E49ABE200036523 /* Lato-Bold.ttf */,
+				35A2A9001E49ABE200036523 /* Lato-BoldItalic.ttf */,
+				35A2A9011E49ABE200036523 /* Lato-Hairline.ttf */,
+				35A2A9021E49ABE200036523 /* Lato-HairlineItalic.ttf */,
+				35A2A9031E49ABE200036523 /* Lato-Italic.ttf */,
+				35A2A9041E49ABE200036523 /* Lato-Light.ttf */,
+				35A2A9051E49ABE200036523 /* Lato-LightItalic.ttf */,
+				35A2A9061E49ABE200036523 /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		35E74DA91E4880C20014A1BB = {
 			isa = PBXGroup;
 			children = (
 				35E74DB41E4880C20014A1BB /* Marco_beta_v1.0 */,
+				35A2A8F61E49ABAE00036523 /* Fonts */,
 				35E74DB31E4880C20014A1BB /* Products */,
+				D2607F2FC779E6448B15F103 /* Pods */,
+				47CA3AE73B6E9AC0BBC848C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +115,33 @@
 		35E74DB41E4880C20014A1BB /* Marco_beta_v1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				35A2A8F41E49958900036523 /* MapStyle.json */,
 				35E74DB51E4880C20014A1BB /* AppDelegate.swift */,
 				35E74DB71E4880C20014A1BB /* ViewController.swift */,
+				35A2A8F21E498BBC00036523 /* MapViewController.swift */,
 				35E74DB91E4880C20014A1BB /* Main.storyboard */,
 				35E74DBC1E4880C20014A1BB /* Assets.xcassets */,
 				35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */,
 				35E74DC11E4880C20014A1BB /* Info.plist */,
 			);
 			path = Marco_beta_v1.0;
+			sourceTree = "<group>";
+		};
+		47CA3AE73B6E9AC0BBC848C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2607F2FC779E6448B15F103 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A0759909D31167C33412348 /* Pods-Marco_beta_v1.0.debug.xcconfig */,
+				F3062667DA701704ED812835 /* Pods-Marco_beta_v1.0.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35E74DC41E4880C20014A1BB /* Build configuration list for PBXNativeTarget "Marco_beta_v1.0" */;
 			buildPhases = (
+				71FE511CA79A862B27A79F5A /* [CP] Check Pods Manifest.lock */,
 				35E74DAE1E4880C20014A1BB /* Sources */,
 				35E74DAF1E4880C20014A1BB /* Frameworks */,
 				35E74DB01E4880C20014A1BB /* Resources */,
+				5C30DB39B1D2B4FBA730797A /* [CP] Embed Pods Frameworks */,
+				38EF597E130C4E1E7201B26D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +179,7 @@
 				TargetAttributes = {
 					35E74DB11E4880C20014A1BB = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 446SPWE29H;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,13 +207,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A2A90E1E49ABE200036523 /* Lato-Light.ttf in Resources */,
+				35A2A8F51E49958900036523 /* MapStyle.json in Resources */,
+				35A2A9091E49ABE200036523 /* Lato-Bold.ttf in Resources */,
+				35A2A90B1E49ABE200036523 /* Lato-Hairline.ttf in Resources */,
 				35E74DC01E4880C20014A1BB /* LaunchScreen.storyboard in Resources */,
+				35A2A8FC1E49ABD500036523 /* Spoqa Han Sans Thin.ttf in Resources */,
+				35A2A90A1E49ABE200036523 /* Lato-BoldItalic.ttf in Resources */,
+				35A2A8FB1E49ABD500036523 /* Spoqa Han Sans Regular.ttf in Resources */,
+				35A2A90C1E49ABE200036523 /* Lato-HairlineItalic.ttf in Resources */,
+				35A2A90D1E49ABE200036523 /* Lato-Italic.ttf in Resources */,
+				35A2A9071E49ABE200036523 /* Lato-Black.ttf in Resources */,
+				35A2A90F1E49ABE200036523 /* Lato-LightItalic.ttf in Resources */,
+				35A2A9081E49ABE200036523 /* Lato-BlackItalic.ttf in Resources */,
+				35A2A8FA1E49ABD500036523 /* Spoqa Han Sans Bold.ttf in Resources */,
 				35E74DBD1E4880C20014A1BB /* Assets.xcassets in Resources */,
 				35E74DBB1E4880C20014A1BB /* Main.storyboard in Resources */,
+				35A2A9101E49ABE200036523 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38EF597E130C4E1E7201B26D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C30DB39B1D2B4FBA730797A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71FE511CA79A862B27A79F5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35E74DAE1E4880C20014A1BB /* Sources */ = {
@@ -137,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E74DB81E4880C20014A1BB /* ViewController.swift in Sources */,
+				35A2A8F31E498BBC00036523 /* MapViewController.swift in Sources */,
 				35E74DB61E4880C20014A1BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +295,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				35E74DBA1E4880C20014A1BB /* Base */,
+				35E74DC71E4883140014A1BB /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -156,6 +304,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				35E74DBF1E4880C20014A1BB /* Base */,
+				35E74DC81E4883140014A1BB /* ko */,
+				35A2A9141E49B57D00036523 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -217,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -258,8 +410,10 @@
 		};
 		35E74DC51E4880C20014A1BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0759909D31167C33412348 /* Pods-Marco_beta_v1.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 446SPWE29H;
 				INFOPLIST_FILE = Marco_beta_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marco.Marco-beta-v1-0";
@@ -270,8 +424,10 @@
 		};
 		35E74DC61E4880C20014A1BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3062667DA701704ED812835 /* Pods-Marco_beta_v1.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 446SPWE29H;
 				INFOPLIST_FILE = Marco_beta_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marco.Marco-beta-v1-0";
@@ -299,6 +455,7 @@
 				35E74DC61E4880C20014A1BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
