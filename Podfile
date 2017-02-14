@@ -3,12 +3,13 @@
 
 target 'Marco_beta_v1.0' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-	#use_frameworks!
+	use_frameworks!
   # Pods for Marco_beta_v1.0
 	source 'https://github.com/CocoaPods/Specs.git'
-	platform :ios, '10.2'
-    pod 'GooglePlaces'
-    pod 'GooglePlacePicker'
+	platform :ios, '10.3'
     pod 'GoogleMaps'
+    pod 'Toucan'
+    pod 'Pulsator'
+    pod "PulsingHalo"
 
 end

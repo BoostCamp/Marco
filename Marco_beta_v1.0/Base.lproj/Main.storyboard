@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iwm-4D-Ciu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iwm-4D-Ciu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -45,8 +44,10 @@
         <scene sceneID="0RU-zl-qmx">
             <objects>
                 <navigationController id="gc5-2b-rp0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="5p5-Jb-Juz"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rHo-7a-nug">
+                    <tabBarItem key="tabBarItem" image="btn_forum" id="5p5-Jb-Juz">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rHo-7a-nug">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -56,7 +57,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuV-L6-lPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="865"/>
+            <point key="canvasLocation" x="1180" y="906"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YD4-qa-d8X">
@@ -138,9 +139,12 @@
         <scene sceneID="9OH-nK-uee">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HNN-qu-SRg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="PtQ-b5-MoR"/>
+                    <tabBarItem key="tabBarItem" title="" image="btn_navigate" id="PtQ-b5-MoR">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="50"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NLc-9i-cYu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NLc-9i-cYu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -153,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="1180" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="hne-HQ-yw3">
             <objects>
-                <viewController id="RmF-xr-xYs" sceneMemberID="viewController">
+                <viewController id="RmF-xr-xYs" customClass="FBLoginViewController" customModule="Marco_beta_v1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jxJ-Cc-y6a"/>
                         <viewControllerLayoutGuide type="bottom" id="h4W-6B-82V"/>
@@ -177,16 +181,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efr-3b-GgK">
-                                <rect key="frame" x="105" y="400" width="165" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="MbO-pj-bpA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="17"/>
-                                <state key="normal" title="Facebook 로그인">
-                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckk-tc-DRh">
                                 <rect key="frame" x="129" y="454" width="117" height="43"/>
                                 <constraints>
@@ -201,13 +195,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Efr-3b-GgK" firstAttribute="centerX" secondItem="TPa-8a-yGX" secondAttribute="centerX" id="Gux-oy-SCj"/>
                             <constraint firstItem="wEc-ZV-Arm" firstAttribute="centerX" secondItem="TPa-8a-yGX" secondAttribute="centerX" id="Kcw-Cp-MQH"/>
-                            <constraint firstItem="Ckk-tc-DRh" firstAttribute="top" secondItem="Efr-3b-GgK" secondAttribute="bottom" constant="24" id="dWw-bG-Gzi"/>
                             <constraint firstItem="wEc-ZV-Arm" firstAttribute="top" secondItem="jxJ-Cc-y6a" secondAttribute="bottom" constant="190" id="sVb-1V-hbo"/>
                             <constraint firstItem="h4W-6B-82V" firstAttribute="top" secondItem="Ckk-tc-DRh" secondAttribute="bottom" constant="170" id="taP-Y2-QKv"/>
                             <constraint firstItem="Ckk-tc-DRh" firstAttribute="centerX" secondItem="TPa-8a-yGX" secondAttribute="centerX" id="vdv-Gf-XDc"/>
-                            <constraint firstItem="Efr-3b-GgK" firstAttribute="leading" secondItem="TPa-8a-yGX" secondAttribute="leadingMargin" constant="89" id="zso-q1-WAK"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -225,6 +216,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.67341369390000005" green="0.68220752480000002" blue="0.88115340470000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.30844267289999999" green="0.30199107800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="HNN-qu-SRg" kind="relationship" relationship="viewControllers" id="awB-dw-Zxd"/>
@@ -242,9 +234,12 @@
         <scene sceneID="hhI-6J-CcR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R5v-df-lcJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="4kv-M6-gKu"/>
+                    <tabBarItem key="tabBarItem" image="btn_chat" id="4kv-M6-gKu">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="80"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8HU-4Y-Qbg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8HU-4Y-Qbg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -255,15 +250,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqG-Vr-iF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="1575"/>
+            <point key="canvasLocation" x="1180" y="1754"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EDy-BI-ip0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iVr-NV-0sH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="93o-Xu-PTi"/>
+                    <tabBarItem key="tabBarItem" image="btn_user" id="93o-Xu-PTi">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fpZ-kg-UHC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fpZ-kg-UHC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -274,15 +271,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iwp-xB-PkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="2264"/>
+            <point key="canvasLocation" x="782" y="2456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bbp-2C-r8w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1hQ-6n-i3t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="IeV-cO-fpD"/>
+                    <tabBarItem key="tabBarItem" image="btn_setting" id="IeV-cO-fpD">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ytR-TF-cyr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ytR-TF-cyr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -293,8 +292,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQj-oK-OkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="2963"/>
+            <point key="canvasLocation" x="318" y="2963"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.67341369390487671" green="0.68220752477645874" blue="0.881153404712677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <image name="btn_chat" width="22" height="21"/>
+        <image name="btn_forum" width="20" height="17"/>
+        <image name="btn_navigate" width="21" height="21"/>
+        <image name="btn_setting" width="22" height="22"/>
+        <image name="btn_user" width="22" height="21"/>
+    </resources>
+    <color key="tintColor" red="0.30844267289388638" green="0.3019910779871543" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

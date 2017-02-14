@@ -9,10 +9,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pulsator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PulsingHalo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Toucan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2C23A7528EC41227F1B5D1E7337C174F</key>
+		<key>151A5297D1D96FC7009CE5F2B8202688</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>667DF744D09277B4AE2C0F63A581BA6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A1D4E3EAE1B938043A98F1CC1B8AB0C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B97E27FD20FBC642658A72B5E396B6B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

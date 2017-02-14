@@ -7,233 +7,452 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2ADBE20CC6F7A390D9608C6FF219269E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		D0F4B4BE16DEFEB2EE933BA5693775E4 /* Pods-Marco_beta_v1.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 610A263B2E8DF045113DFB4345E7705B /* Pods-Marco_beta_v1.0-dummy.m */; };
+		1AD474A170E4AE6DA9914AB95B810509 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
+		21C9F0F87F38DED2198F7B4BA2D4ED90 /* Pods-Marco_beta_v1.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A1DFDEDE9387B82CAD7EACD8DC9378 /* Pods-Marco_beta_v1.0-dummy.m */; };
+		2A052EEACCE72CB88E537E13F4C0BA68 /* PulsingHalo.h in Headers */ = {isa = PBXBuildFile; fileRef = F07F6E593AC09548105D2F92CE0CC6D2 /* PulsingHalo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A6D2E63A918FA94B0C83B9B50858531 /* Pulsator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A20147BFCAA4DE8A6A300C27091EF26E /* Pulsator-dummy.m */; };
+		30DBCF95A8502B26CAA554D7B6113B50 /* Toucan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBCBF16EC2ED4FFADC0172CCE969D21 /* Toucan-dummy.m */; };
+		55E204EF99AA5CD62A5A76E299D32E99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF675A168132FD52AED630F977FE906 /* UIKit.framework */; };
+		82C467BC43FB8561CD63DA69DB963952 /* Pods-Marco_beta_v1.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31B3487C705AE3AC12665A32C3B46447 /* Pods-Marco_beta_v1.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A66F028F4A4144ADDE3F765587C7A6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */; };
+		A046DE9261AAF10D0AEFED75014D2247 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */; };
+		A48FBBCF323928861525229B0391E7CD /* Toucan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5E43129D48051C160A8B180099C0DAD /* Toucan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACDB9D294D6E2E1C9D169FC826030234 /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF0AAE11A9207BF1BA9EE05DDD952C /* Toucan.swift */; };
+		AD718FE95B550EEA765B57AB2CDE9DD9 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B91633E4776B1795228184F12CF88 /* Pulsator.swift */; };
+		D03CCD4900AE953A182EDC2B023E09E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
+		D2C034FA4FD5F3784BA43D5299EFF8DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
+		D374A51376E0A1D467C21D12C4A1C28A /* PulsingHalo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5445385E13387B3B71D0258DE12D3A12 /* PulsingHalo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD3AADBF5D608214415B61F08A5907CD /* PulsingHalo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F59CAC1AD076520AD9BFB3284206D /* PulsingHalo-dummy.m */; };
+		E362C5F8DE3D4DEC5AB58805077CAE26 /* Pulsator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D43D99E3B174A50081E5AD3979298634 /* Pulsator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E525A9B1A6E53254F0D4E396C13BF22B /* PulsingHaloLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 23EA848763DD1C22C0D77A45D21AE4BF /* PulsingHaloLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1FBE09ED1D3AD78A63FBB630B44F44F /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C4544B9F65A9FAFF315A2A567925E988 /* PulsingHaloLayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F379BFE18AD846FED7299FDE963D9022 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2AC92BB69B6740FFE74CC1D2DED20FB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 151A5297D1D96FC7009CE5F2B8202688;
+			remoteInfo = PulsingHalo;
+		};
+		5574905A78A6953BA97423FE6EDDB37D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667DF744D09277B4AE2C0F63A581BA6F;
+			remoteInfo = Toucan;
+		};
+		817A141C460CB167F8C0E817943CD996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D4E3EAE1B938043A98F1CC1B8AB0C2;
+			remoteInfo = Pulsator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		07790BD46C0A51AE9AF086D8F62242CC /* GooglePlacePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlacePicker.framework; path = Frameworks/GooglePlacePicker.framework; sourceTree = "<group>"; };
-		1117A6D1FE68A6F983D560933AF5E265 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		11FC90A1CB0D01236F014FB839DA2043 /* Pods-Marco_beta_v1.0-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Marco_beta_v1.0-frameworks.sh"; sourceTree = "<group>"; };
-		13F40E9003A14B5BC001434359614682 /* Pods-Marco_beta_v1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Marco_beta_v1.0.release.xcconfig"; sourceTree = "<group>"; };
-		610A263B2E8DF045113DFB4345E7705B /* Pods-Marco_beta_v1.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Marco_beta_v1.0-dummy.m"; sourceTree = "<group>"; };
-		65480A1BFE771F4D1FA83A20B0A4912A /* Pods-Marco_beta_v1.0-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Marco_beta_v1.0-acknowledgements.plist"; sourceTree = "<group>"; };
-		8BCCCA295DEE22197B0C283775AB5A26 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		1571AF71997874792BB24E4E821194E4 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2070415C8CE79CF3E089C3EFFE72681F /* Pods_Marco_beta_v1_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Marco_beta_v1_0.framework; path = "Pods-Marco_beta_v1.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EA848763DD1C22C0D77A45D21AE4BF /* PulsingHaloLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = PulsingHalo/PulsingHaloLayer.h; sourceTree = "<group>"; };
+		2ED73FFE23A61E51E9F4EAFD8B0BC0B5 /* Toucan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toucan-prefix.pch"; sourceTree = "<group>"; };
+		31B3487C705AE3AC12665A32C3B46447 /* Pods-Marco_beta_v1.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Marco_beta_v1.0-umbrella.h"; sourceTree = "<group>"; };
+		33F7B20D40A276DE761CCD9AB9C4C6F3 /* Pulsator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pulsator-prefix.pch"; sourceTree = "<group>"; };
+		3A5C4D521112D128012CB573F5E301AB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D50A64A9E225D6745C378A3EA0CE78B /* Pods-Marco_beta_v1.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Marco_beta_v1.0.debug.xcconfig"; sourceTree = "<group>"; };
+		3E096AC8729EC74BCA2547173D1330A6 /* PulsingHalo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PulsingHalo.xcconfig; sourceTree = "<group>"; };
+		3FB721B5ECC0B5E8160F659580F6A52C /* Pods-Marco_beta_v1.0-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Marco_beta_v1.0-resources.sh"; sourceTree = "<group>"; };
+		426EF4433ADD957AD41908EE4C426EA5 /* Pulsator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Pulsator.modulemap; sourceTree = "<group>"; };
+		4A279419890190E4DCFED82A9696AA15 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		4E763C23EA96F480E7ADE79B33D8B25A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		5445385E13387B3B71D0258DE12D3A12 /* PulsingHalo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PulsingHalo-umbrella.h"; sourceTree = "<group>"; };
+		58CA13FE59DFA9D21A1EEC51F242B525 /* Pods-Marco_beta_v1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Marco_beta_v1.0.release.xcconfig"; sourceTree = "<group>"; };
+		5A30FDF62A12A19753820ECEB0071BF2 /* Pods-Marco_beta_v1.0-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Marco_beta_v1.0-acknowledgements.plist"; sourceTree = "<group>"; };
+		5BF675A168132FD52AED630F977FE906 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7F8940466373EE99CF58128C5DE76002 /* Pods-Marco_beta_v1.0-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Marco_beta_v1.0-frameworks.sh"; sourceTree = "<group>"; };
+		8666991F17B0B2A9ACE8BA695B4E50FB /* PulsingHalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PulsingHalo.framework; path = PulsingHalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A38533D6A966E4A39F6C807B88052AA /* Pods-Marco_beta_v1.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Marco_beta_v1.0.modulemap"; sourceTree = "<group>"; };
+		8ABE3A44752C6C0B10DDBE52619377C1 /* PulsingHalo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PulsingHalo.modulemap; sourceTree = "<group>"; };
+		8B31456982B006616CB773F1E1406313 /* Toucan.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toucan.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		955D3A22EB34AB333524A949DC729F6B /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
-		B85A28F069E679A0FBA92FB4B7DE4AA2 /* Pods-Marco_beta_v1.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Marco_beta_v1.0.debug.xcconfig"; sourceTree = "<group>"; };
-		CA9245AB5B86A5BCD1E0D3BF7079D64B /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF7125873C57C9CEAAE05344B5F94DE0 /* Pods-Marco_beta_v1.0-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Marco_beta_v1.0-resources.sh"; sourceTree = "<group>"; };
-		D1DBCD0071D70866EBEFA8E983E0A2FE /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		E348480D8D2B1E5707C78BB56419CB1B /* libPods-Marco_beta_v1.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Marco_beta_v1.0.a"; path = "libPods-Marco_beta_v1.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB262AE138B308391A38D3F1818C2218 /* Pods-Marco_beta_v1.0-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Marco_beta_v1.0-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F769EDE7CC5A77CDBE3B2309AF3BD5FA /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle; sourceTree = "<group>"; };
-		F8567FFA809DD02B36CFB593922A14EA /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		967D2CC3A53004A5034B34EDEE6E2419 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AACDC22145717F451DC04CAC7834F98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A1DFDEDE9387B82CAD7EACD8DC9378 /* Pods-Marco_beta_v1.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Marco_beta_v1.0-dummy.m"; sourceTree = "<group>"; };
+		A20147BFCAA4DE8A6A300C27091EF26E /* Pulsator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pulsator-dummy.m"; sourceTree = "<group>"; };
+		A37F59CAC1AD076520AD9BFB3284206D /* PulsingHalo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PulsingHalo-dummy.m"; sourceTree = "<group>"; };
+		AFE445EDED082FEF7C1147521A32A12C /* PulsingHalo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PulsingHalo-prefix.pch"; sourceTree = "<group>"; };
+		B118E80F2741135B1641AEEA363B6EE2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3103DEFEADCE8B99580DA317DFB49E1 /* Pulsator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pulsator.framework; path = Pulsator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0EF0AAE11A9207BF1BA9EE05DDD952C /* Toucan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toucan.swift; path = Source/Toucan.swift; sourceTree = "<group>"; };
+		C2C209CC9469066542F82FCFF3C377E9 /* Pulsator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pulsator.xcconfig; sourceTree = "<group>"; };
+		C4544B9F65A9FAFF315A2A567925E988 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = PulsingHalo/PulsingHaloLayer.m; sourceTree = "<group>"; };
+		CA2699BFAC62F044261144177B9935DA /* Toucan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Toucan.modulemap; sourceTree = "<group>"; };
+		D15B91633E4776B1795228184F12CF88 /* Pulsator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pulsator.swift; path = Pulsator/Pulsator.swift; sourceTree = "<group>"; };
+		D377F5F6B06CD0A9277C9E0D1805D52B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		D43D99E3B174A50081E5AD3979298634 /* Pulsator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pulsator-umbrella.h"; sourceTree = "<group>"; };
+		E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		E5E43129D48051C160A8B180099C0DAD /* Toucan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toucan-umbrella.h"; sourceTree = "<group>"; };
+		EBBCBF16EC2ED4FFADC0172CCE969D21 /* Toucan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toucan-dummy.m"; sourceTree = "<group>"; };
+		EC32878090C4B2B93381956161EC0930 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EDBC79EA1F05460C0BD5667DE2FAA2AE /* Pods-Marco_beta_v1.0-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Marco_beta_v1.0-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F07F6E593AC09548105D2F92CE0CC6D2 /* PulsingHalo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PulsingHalo.h; path = PulsingHalo/PulsingHalo.h; sourceTree = "<group>"; };
+		F3F450BFAF2E95FDF964634BF785F9D1 /* Toucan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toucan.framework; path = Toucan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A768C4A4F1A39B0AA0D77582546D486 /* Frameworks */ = {
+		03E97EE22622C8210156F500B4216E35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ADBE20CC6F7A390D9608C6FF219269E /* Foundation.framework in Frameworks */,
+				D03CCD4900AE953A182EDC2B023E09E9 /* Foundation.framework in Frameworks */,
+				8A66F028F4A4144ADDE3F765587C7A6F /* QuartzCore.framework in Frameworks */,
+				55E204EF99AA5CD62A5A76E299D32E99 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D82CAEBC12713245D7BD51ABDF0229B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C034FA4FD5F3784BA43D5299EFF8DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		182480557B384B451EFF1D53FB2DC533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F379BFE18AD846FED7299FDE963D9022 /* Foundation.framework in Frameworks */,
+				A046DE9261AAF10D0AEFED75014D2247 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B450A78E65449DB9A23B79E4B6AC26ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD474A170E4AE6DA9914AB95B810509 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		057612C31241123A1B53E2F8FEE23AB0 /* GooglePlaces */ = {
+		0311FCA066F7E3F83AEF71F6C208BA8C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8BA44F82F96D164DA342FB09A0BEE150 /* Frameworks */,
-				9595338FF99D6E406412D70BB160C308 /* Resources */,
+				9AACDC22145717F451DC04CAC7834F98 /* Info.plist */,
+				8ABE3A44752C6C0B10DDBE52619377C1 /* PulsingHalo.modulemap */,
+				3E096AC8729EC74BCA2547173D1330A6 /* PulsingHalo.xcconfig */,
+				A37F59CAC1AD076520AD9BFB3284206D /* PulsingHalo-dummy.m */,
+				AFE445EDED082FEF7C1147521A32A12C /* PulsingHalo-prefix.pch */,
+				5445385E13387B3B71D0258DE12D3A12 /* PulsingHalo-umbrella.h */,
 			);
-			name = GooglePlaces;
-			path = GooglePlaces;
+			name = "Support Files";
+			path = "../Target Support Files/PulsingHalo";
 			sourceTree = "<group>";
 		};
-		24E6408847EA4697EC99A3C22F9B2F8E /* Resources */ = {
+		11DA6C8FD4A034A378E430185D01E0BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA9245AB5B86A5BCD1E0D3BF7079D64B /* GoogleMaps.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		27039D41079ABCFBFF8B53C4987848CD /* Pods-Marco_beta_v1.0 */ = {
-			isa = PBXGroup;
-			children = (
-				EB262AE138B308391A38D3F1818C2218 /* Pods-Marco_beta_v1.0-acknowledgements.markdown */,
-				65480A1BFE771F4D1FA83A20B0A4912A /* Pods-Marco_beta_v1.0-acknowledgements.plist */,
-				610A263B2E8DF045113DFB4345E7705B /* Pods-Marco_beta_v1.0-dummy.m */,
-				11FC90A1CB0D01236F014FB839DA2043 /* Pods-Marco_beta_v1.0-frameworks.sh */,
-				CF7125873C57C9CEAAE05344B5F94DE0 /* Pods-Marco_beta_v1.0-resources.sh */,
-				B85A28F069E679A0FBA92FB4B7DE4AA2 /* Pods-Marco_beta_v1.0.debug.xcconfig */,
-				13F40E9003A14B5BC001434359614682 /* Pods-Marco_beta_v1.0.release.xcconfig */,
-			);
-			name = "Pods-Marco_beta_v1.0";
-			path = "Target Support Files/Pods-Marco_beta_v1.0";
-			sourceTree = "<group>";
-		};
-		35B282C45D59E9D1CA041F6CE5685CE8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E348480D8D2B1E5707C78BB56419CB1B /* libPods-Marco_beta_v1.0.a */,
+				2070415C8CE79CF3E089C3EFFE72681F /* Pods_Marco_beta_v1_0.framework */,
+				B3103DEFEADCE8B99580DA317DFB49E1 /* Pulsator.framework */,
+				8666991F17B0B2A9ACE8BA695B4E50FB /* PulsingHalo.framework */,
+				F3F450BFAF2E95FDF964634BF785F9D1 /* Toucan.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		45A6375AD18305E8BA7B79AD1BE61E9D /* Frameworks */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8BCCCA295DEE22197B0C283775AB5A26 /* GoogleMaps.framework */,
-				1117A6D1FE68A6F983D560933AF5E265 /* GoogleMapsCore.framework */,
+				E5E9260013FA223D81B907D9285F6EA1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+		3AEF03E72218D979CD90B0E9135A8173 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7A999BD5B4C2C01904FC59776164FBE1 /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-				45A6375AD18305E8BA7B79AD1BE61E9D /* Frameworks */,
-				24E6408847EA4697EC99A3C22F9B2F8E /* Resources */,
+				AD5AB7283364F204DF4CAEFB2F23244D /* Frameworks */,
+				662B294623A76854398462C7B0340E24 /* Resources */,
 			);
 			name = Maps;
+			sourceTree = "<group>";
+		};
+		3DE55FB52E3B08B3D29A5FAF1919F774 /* Toucan */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF0AAE11A9207BF1BA9EE05DDD952C /* Toucan.swift */,
+				EDAB251D79E281EB05D5F13CEB2EEEA9 /* Support Files */,
+			);
+			name = Toucan;
+			path = Toucan;
+			sourceTree = "<group>";
+		};
+		47C3C1DFCB601B9F5B07D4B9F912D54A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCEC7605DD1E8C8C10238BF489F82141 /* Pods-Marco_beta_v1.0 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4CA2023A4F1393589EA74FACE6DE0A3A /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				F07F6E593AC09548105D2F92CE0CC6D2 /* PulsingHalo.h */,
+				23EA848763DD1C22C0D77A45D21AE4BF /* PulsingHaloLayer.h */,
+				C4544B9F65A9FAFF315A2A567925E988 /* PulsingHaloLayer.m */,
+				0311FCA066F7E3F83AEF71F6C208BA8C /* Support Files */,
+			);
+			name = PulsingHalo;
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
+		5E0F5D810B22E77E36E7E45F0BFEDAB8 /* Pulsator */ = {
+			isa = PBXGroup;
+			children = (
+				D15B91633E4776B1795228184F12CF88 /* Pulsator.swift */,
+				94297A4F7F75683FF6C649E23C2CE468 /* Support Files */,
+			);
+			name = Pulsator;
+			path = Pulsator;
+			sourceTree = "<group>";
+		};
+		662B294623A76854398462C7B0340E24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1571AF71997874792BB24E4E821194E4 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		744C97E3D5BF232F9A26E399B8524470 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				AFD9E1303098213572BD1CFC8EDF6C19 /* Base */,
+				3AEF03E72218D979CD90B0E9135A8173 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C62832EC902B481843EFC870F9D95CC2 /* Pods */,
-				35B282C45D59E9D1CA041F6CE5685CE8 /* Products */,
-				BD673FA16EAD4038389C29557B7B89D4 /* Targets Support Files */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				EEF3532F5EBC08F805BA61B8D64ED5D3 /* Pods */,
+				11DA6C8FD4A034A378E430185D01E0BC /* Products */,
+				47C3C1DFCB601B9F5B07D4B9F912D54A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8BA44F82F96D164DA342FB09A0BEE150 /* Frameworks */ = {
+		94297A4F7F75683FF6C649E23C2CE468 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				955D3A22EB34AB333524A949DC729F6B /* GooglePlaces.framework */,
+				3A5C4D521112D128012CB573F5E301AB /* Info.plist */,
+				426EF4433ADD957AD41908EE4C426EA5 /* Pulsator.modulemap */,
+				C2C209CC9469066542F82FCFF3C377E9 /* Pulsator.xcconfig */,
+				A20147BFCAA4DE8A6A300C27091EF26E /* Pulsator-dummy.m */,
+				33F7B20D40A276DE761CCD9AB9C4C6F3 /* Pulsator-prefix.pch */,
+				D43D99E3B174A50081E5AD3979298634 /* Pulsator-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pulsator";
+			sourceTree = "<group>";
+		};
+		AD5AB7283364F204DF4CAEFB2F23244D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A279419890190E4DCFED82A9696AA15 /* GoogleMaps.framework */,
+				4E763C23EA96F480E7ADE79B33D8B25A /* GoogleMapsCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8FFA7EAE118844748AD9685060A6B673 /* Base */ = {
+		AFD9E1303098213572BD1CFC8EDF6C19 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				FD4ED290151C28ABCF7A3EA0217355EB /* Frameworks */,
+				EE560682D71DDD57F6AC43AC1071ADFD /* Frameworks */,
 			);
 			name = Base;
 			sourceTree = "<group>";
 		};
-		9335B78F64E389AD6BD28E5033911D2C /* Resources */ = {
+		E5E9260013FA223D81B907D9285F6EA1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F769EDE7CC5A77CDBE3B2309AF3BD5FA /* GooglePlacePicker.bundle */,
+				EC32878090C4B2B93381956161EC0930 /* Foundation.framework */,
+				E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */,
+				5BF675A168132FD52AED630F977FE906 /* UIKit.framework */,
 			);
-			name = Resources;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		9595338FF99D6E406412D70BB160C308 /* Resources */ = {
+		EDAB251D79E281EB05D5F13CEB2EEEA9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8567FFA809DD02B36CFB593922A14EA /* GooglePlaces.bundle */,
+				967D2CC3A53004A5034B34EDEE6E2419 /* Info.plist */,
+				CA2699BFAC62F044261144177B9935DA /* Toucan.modulemap */,
+				8B31456982B006616CB773F1E1406313 /* Toucan.xcconfig */,
+				EBBCBF16EC2ED4FFADC0172CCE969D21 /* Toucan-dummy.m */,
+				2ED73FFE23A61E51E9F4EAFD8B0BC0B5 /* Toucan-prefix.pch */,
+				E5E43129D48051C160A8B180099C0DAD /* Toucan-umbrella.h */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/Toucan";
 			sourceTree = "<group>";
 		};
-		9C0A1FBBD02B7528347BC7FB84DE24F5 /* Frameworks */ = {
+		EE560682D71DDD57F6AC43AC1071ADFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07790BD46C0A51AE9AF086D8F62242CC /* GooglePlacePicker.framework */,
+				D377F5F6B06CD0A9277C9E0D1805D52B /* GoogleMapsBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		EEF3532F5EBC08F805BA61B8D64ED5D3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BD673FA16EAD4038389C29557B7B89D4 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				27039D41079ABCFBFF8B53C4987848CD /* Pods-Marco_beta_v1.0 */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C62832EC902B481843EFC870F9D95CC2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E5C0912CEC7444CFF51EFFE502270519 /* GoogleMaps */,
-				CCA175DF4D87459CA14C4E01BCFDEF95 /* GooglePlacePicker */,
-				057612C31241123A1B53E2F8FEE23AB0 /* GooglePlaces */,
+				744C97E3D5BF232F9A26E399B8524470 /* GoogleMaps */,
+				5E0F5D810B22E77E36E7E45F0BFEDAB8 /* Pulsator */,
+				4CA2023A4F1393589EA74FACE6DE0A3A /* PulsingHalo */,
+				3DE55FB52E3B08B3D29A5FAF1919F774 /* Toucan */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CCA175DF4D87459CA14C4E01BCFDEF95 /* GooglePlacePicker */ = {
+		FCEC7605DD1E8C8C10238BF489F82141 /* Pods-Marco_beta_v1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				9C0A1FBBD02B7528347BC7FB84DE24F5 /* Frameworks */,
-				9335B78F64E389AD6BD28E5033911D2C /* Resources */,
+				B118E80F2741135B1641AEEA363B6EE2 /* Info.plist */,
+				8A38533D6A966E4A39F6C807B88052AA /* Pods-Marco_beta_v1.0.modulemap */,
+				EDBC79EA1F05460C0BD5667DE2FAA2AE /* Pods-Marco_beta_v1.0-acknowledgements.markdown */,
+				5A30FDF62A12A19753820ECEB0071BF2 /* Pods-Marco_beta_v1.0-acknowledgements.plist */,
+				A1A1DFDEDE9387B82CAD7EACD8DC9378 /* Pods-Marco_beta_v1.0-dummy.m */,
+				7F8940466373EE99CF58128C5DE76002 /* Pods-Marco_beta_v1.0-frameworks.sh */,
+				3FB721B5ECC0B5E8160F659580F6A52C /* Pods-Marco_beta_v1.0-resources.sh */,
+				31B3487C705AE3AC12665A32C3B46447 /* Pods-Marco_beta_v1.0-umbrella.h */,
+				3D50A64A9E225D6745C378A3EA0CE78B /* Pods-Marco_beta_v1.0.debug.xcconfig */,
+				58CA13FE59DFA9D21A1EEC51F242B525 /* Pods-Marco_beta_v1.0.release.xcconfig */,
 			);
-			name = GooglePlacePicker;
-			path = GooglePlacePicker;
-			sourceTree = "<group>";
-		};
-		E5C0912CEC7444CFF51EFFE502270519 /* GoogleMaps */ = {
-			isa = PBXGroup;
-			children = (
-				8FFA7EAE118844748AD9685060A6B673 /* Base */,
-				7A999BD5B4C2C01904FC59776164FBE1 /* Maps */,
-			);
-			name = GoogleMaps;
-			path = GoogleMaps;
-			sourceTree = "<group>";
-		};
-		FD4ED290151C28ABCF7A3EA0217355EB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D1DBCD0071D70866EBEFA8E983E0A2FE /* GoogleMapsBase.framework */,
-			);
-			name = Frameworks;
+			name = "Pods-Marco_beta_v1.0";
+			path = "Target Support Files/Pods-Marco_beta_v1.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		69F190110B1AA4A0BE69A003E2ECA2AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D374A51376E0A1D467C21D12C4A1C28A /* PulsingHalo-umbrella.h in Headers */,
+				2A052EEACCE72CB88E537E13F4C0BA68 /* PulsingHalo.h in Headers */,
+				E525A9B1A6E53254F0D4E396C13BF22B /* PulsingHaloLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A72FC343CD669AA270EADD698BF132A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48FBBCF323928861525229B0391E7CD /* Toucan-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F40A0E40BF3C8AB7479E1A75D3446B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C467BC43FB8561CD63DA69DB963952 /* Pods-Marco_beta_v1.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8CE39FDA63584434E17512CEA59D303 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E362C5F8DE3D4DEC5AB58805077CAE26 /* Pulsator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		2C23A7528EC41227F1B5D1E7337C174F /* Pods-Marco_beta_v1.0 */ = {
+		151A5297D1D96FC7009CE5F2B8202688 /* PulsingHalo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD25724D8C92EB220745F23998FE2E4B /* Build configuration list for PBXNativeTarget "Pods-Marco_beta_v1.0" */;
+			buildConfigurationList = 1D1D902BD7FF02EBCCF726FC82B542B7 /* Build configuration list for PBXNativeTarget "PulsingHalo" */;
 			buildPhases = (
-				D201242210D578B383FC7BCB0FD84A3D /* Sources */,
-				0A768C4A4F1A39B0AA0D77582546D486 /* Frameworks */,
+				E23A8FE8E32373E33A92D65E468EF4A0 /* Sources */,
+				182480557B384B451EFF1D53FB2DC533 /* Frameworks */,
+				69F190110B1AA4A0BE69A003E2ECA2AF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = PulsingHalo;
+			productName = PulsingHalo;
+			productReference = 8666991F17B0B2A9ACE8BA695B4E50FB /* PulsingHalo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		667DF744D09277B4AE2C0F63A581BA6F /* Toucan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B37E822889DE467CAB0991EF30FD7E7A /* Build configuration list for PBXNativeTarget "Toucan" */;
+			buildPhases = (
+				BC4E65CCCE16DC18F26E2C7C10EECA8B /* Sources */,
+				B450A78E65449DB9A23B79E4B6AC26ED /* Frameworks */,
+				6A72FC343CD669AA270EADD698BF132A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toucan;
+			productName = Toucan;
+			productReference = F3F450BFAF2E95FDF964634BF785F9D1 /* Toucan.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A1D4E3EAE1B938043A98F1CC1B8AB0C2 /* Pulsator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8B013A94D4F6C5EA88BC504DD01F0E9 /* Build configuration list for PBXNativeTarget "Pulsator" */;
+			buildPhases = (
+				E79A498474EFEA88060AB4F536923BC2 /* Sources */,
+				03E97EE22622C8210156F500B4216E35 /* Frameworks */,
+				C8CE39FDA63584434E17512CEA59D303 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pulsator;
+			productName = Pulsator;
+			productReference = B3103DEFEADCE8B99580DA317DFB49E1 /* Pulsator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B97E27FD20FBC642658A72B5E396B6B9 /* Pods-Marco_beta_v1.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 790CC59021C74EE43FDECE22761B9A2C /* Build configuration list for PBXNativeTarget "Pods-Marco_beta_v1.0" */;
+			buildPhases = (
+				A45A47F5F7E8CEAAD563B0CBFE236A1B /* Sources */,
+				0D82CAEBC12713245D7BD51ABDF0229B /* Frameworks */,
+				7F40A0E40BF3C8AB7479E1A75D3446B9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9B70188F0C632A395AEE8414B9EEC56 /* PBXTargetDependency */,
+				3BA5F4B073CCDFAE189B93C1170DB928 /* PBXTargetDependency */,
+				BBBC9C7A515A674955821B594E27FD4D /* PBXTargetDependency */,
+			);
 			name = "Pods-Marco_beta_v1.0";
 			productName = "Pods-Marco_beta_v1.0";
-			productReference = E348480D8D2B1E5707C78BB56419CB1B /* libPods-Marco_beta_v1.0.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 2070415C8CE79CF3E089C3EFFE72681F /* Pods_Marco_beta_v1_0.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -252,28 +471,112 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 35B282C45D59E9D1CA041F6CE5685CE8 /* Products */;
+			productRefGroup = 11DA6C8FD4A034A378E430185D01E0BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C23A7528EC41227F1B5D1E7337C174F /* Pods-Marco_beta_v1.0 */,
+				B97E27FD20FBC642658A72B5E396B6B9 /* Pods-Marco_beta_v1.0 */,
+				A1D4E3EAE1B938043A98F1CC1B8AB0C2 /* Pulsator */,
+				151A5297D1D96FC7009CE5F2B8202688 /* PulsingHalo */,
+				667DF744D09277B4AE2C0F63A581BA6F /* Toucan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D201242210D578B383FC7BCB0FD84A3D /* Sources */ = {
+		A45A47F5F7E8CEAAD563B0CBFE236A1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0F4B4BE16DEFEB2EE933BA5693775E4 /* Pods-Marco_beta_v1.0-dummy.m in Sources */,
+				21C9F0F87F38DED2198F7B4BA2D4ED90 /* Pods-Marco_beta_v1.0-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4E65CCCE16DC18F26E2C7C10EECA8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30DBCF95A8502B26CAA554D7B6113B50 /* Toucan-dummy.m in Sources */,
+				ACDB9D294D6E2E1C9D169FC826030234 /* Toucan.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E23A8FE8E32373E33A92D65E468EF4A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3AADBF5D608214415B61F08A5907CD /* PulsingHalo-dummy.m in Sources */,
+				F1FBE09ED1D3AD78A63FBB630B44F44F /* PulsingHaloLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E79A498474EFEA88060AB4F536923BC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A6D2E63A918FA94B0C83B9B50858531 /* Pulsator-dummy.m in Sources */,
+				AD718FE95B550EEA765B57AB2CDE9DD9 /* Pulsator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3BA5F4B073CCDFAE189B93C1170DB928 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PulsingHalo;
+			target = 151A5297D1D96FC7009CE5F2B8202688 /* PulsingHalo */;
+			targetProxy = 2AC92BB69B6740FFE74CC1D2DED20FB4 /* PBXContainerItemProxy */;
+		};
+		BBBC9C7A515A674955821B594E27FD4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Toucan;
+			target = 667DF744D09277B4AE2C0F63A581BA6F /* Toucan */;
+			targetProxy = 5574905A78A6953BA97423FE6EDDB37D /* PBXContainerItemProxy */;
+		};
+		C9B70188F0C632A395AEE8414B9EEC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Pulsator;
+			target = A1D4E3EAE1B938043A98F1CC1B8AB0C2 /* Pulsator */;
+			targetProxy = 817A141C460CB167F8C0E817943CD996 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+		0D12F3802F2D1F1F7D7363B811E5A9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B31456982B006616CB773F1E1406313 /* Toucan.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Toucan/Toucan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toucan/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Toucan/Toucan.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Toucan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -313,53 +616,207 @@
 			};
 			name = Release;
 		};
-		77066EC0DED5226996C5A30363F4CFEC /* Debug */ = {
+		4370EFB0E2E0B62FFFD06CC07F848CA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B85A28F069E679A0FBA92FB4B7DE4AA2 /* Pods-Marco_beta_v1.0.debug.xcconfig */;
+			baseConfigurationReference = 3E096AC8729EC74BCA2547173D1330A6 /* PulsingHalo.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PulsingHalo;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		DB2CA6C59588BFFBF48FA3C3DADA66C9 /* Release */ = {
+		4F94819397C89F18E3338A39408F91C5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13F40E9003A14B5BC001434359614682 /* Pods-Marco_beta_v1.0.release.xcconfig */;
+			baseConfigurationReference = 58CA13FE59DFA9D21A1EEC51F242B525 /* Pods-Marco_beta_v1.0.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				INFOPLIST_FILE = "Target Support Files/Pods-Marco_beta_v1.0/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_Marco_beta_v1_0;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+		88DF25FD32E6934F0EF7A7202426DB2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D50A64A9E225D6745C378A3EA0CE78B /* Pods-Marco_beta_v1.0.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Marco_beta_v1.0/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Marco_beta_v1_0;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97508928901FBF14F7800F18E7C7522A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2C209CC9469066542F82FCFF3C377E9 /* Pulsator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pulsator/Pulsator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pulsator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pulsator/Pulsator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Pulsator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A63937A6512CFD04C31C953EF8A07712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B31456982B006616CB773F1E1406313 /* Toucan.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Toucan/Toucan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toucan/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Toucan/Toucan.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Toucan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A962CEC847E07685C3BA5C75A057DB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E096AC8729EC74BCA2547173D1330A6 /* PulsingHalo.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PulsingHalo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -395,7 +852,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -403,23 +860,82 @@
 			};
 			name = Debug;
 		};
+		C3B738BC026E3A7FA852AFFFDD71FDD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2C209CC9469066542F82FCFF3C377E9 /* Pulsator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pulsator/Pulsator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pulsator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pulsator/Pulsator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Pulsator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		1D1D902BD7FF02EBCCF726FC82B542B7 /* Build configuration list for PBXNativeTarget "PulsingHalo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
-				673254EEAF0B5BF4596080C749645884 /* Release */,
+				4370EFB0E2E0B62FFFD06CC07F848CA6 /* Debug */,
+				A962CEC847E07685C3BA5C75A057DB02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD25724D8C92EB220745F23998FE2E4B /* Build configuration list for PBXNativeTarget "Pods-Marco_beta_v1.0" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77066EC0DED5226996C5A30363F4CFEC /* Debug */,
-				DB2CA6C59588BFFBF48FA3C3DADA66C9 /* Release */,
+				C382132BB6BF8CA1A911872A2062FD0D /* Debug */,
+				156284431C64CB05C59BDA0595A1E95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		790CC59021C74EE43FDECE22761B9A2C /* Build configuration list for PBXNativeTarget "Pods-Marco_beta_v1.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DF25FD32E6934F0EF7A7202426DB2B /* Debug */,
+				4F94819397C89F18E3338A39408F91C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8B013A94D4F6C5EA88BC504DD01F0E9 /* Build configuration list for PBXNativeTarget "Pulsator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97508928901FBF14F7800F18E7C7522A /* Debug */,
+				C3B738BC026E3A7FA852AFFFDD71FDD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B37E822889DE467CAB0991EF30FD7E7A /* Build configuration list for PBXNativeTarget "Toucan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D12F3802F2D1F1F7D7363B811E5A9B0 /* Debug */,
+				A63937A6512CFD04C31C953EF8A07712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

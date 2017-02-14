@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UIColor {
+    class var untWarmBlue: UIColor {
+        return UIColor(red: 68.0 / 255.0, green: 65.0 / 255.0, blue: 216.0 / 255.0, alpha: 1.0)
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,7 +25,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

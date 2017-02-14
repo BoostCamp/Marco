@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D202BCED9DDCF44ECD8471 /* Pods_Marco_beta_v1_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC707EE6397A6BEB68B90577 /* Pods_Marco_beta_v1_0.framework */; };
+		357C53981E4ED1D00021B200 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53941E4ED1D00021B200 /* Bolts.framework */; };
+		357C53991E4ED1D00021B200 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53941E4ED1D00021B200 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		357C539A1E4ED1D00021B200 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53951E4ED1D00021B200 /* FBSDKCoreKit.framework */; };
+		357C539B1E4ED1D00021B200 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53951E4ED1D00021B200 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		357C539C1E4ED1D00021B200 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53961E4ED1D00021B200 /* FBSDKLoginKit.framework */; };
+		357C539D1E4ED1D00021B200 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53961E4ED1D00021B200 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		357C539E1E4ED1D00021B200 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53971E4ED1D00021B200 /* FBSDKShareKit.framework */; };
+		357C539F1E4ED1D00021B200 /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53971E4ED1D00021B200 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		357C53A21E4ED8B20021B200 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357C53A11E4ED8B20021B200 /* FBLoginViewController.swift */; };
 		35A2A8F31E498BBC00036523 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2A8F21E498BBC00036523 /* MapViewController.swift */; };
 		35A2A8F51E49958900036523 /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A8F41E49958900036523 /* MapStyle.json */; };
 		35A2A9221E49C4A000036523 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9151E49C4A000036523 /* Lato-Black.ttf */; };
@@ -22,15 +32,36 @@
 		35A2A92C1E49C4A000036523 /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A91F1E49C4A000036523 /* Spoqa Han Sans Bold.ttf */; };
 		35A2A92D1E49C4A000036523 /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9201E49C4A000036523 /* Spoqa Han Sans Regular.ttf */; };
 		35A2A92E1E49C4A000036523 /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35A2A9211E49C4A000036523 /* Spoqa Han Sans Thin.ttf */; };
+		35E22D901E52FA9F006B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E22D8F1E52FA9F006B5F15 /* Assets.xcassets */; };
 		35E74DB61E4880C20014A1BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E74DB51E4880C20014A1BB /* AppDelegate.swift */; };
 		35E74DB81E4880C20014A1BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E74DB71E4880C20014A1BB /* ViewController.swift */; };
 		35E74DBB1E4880C20014A1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DB91E4880C20014A1BB /* Main.storyboard */; };
-		35E74DBD1E4880C20014A1BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DBC1E4880C20014A1BB /* Assets.xcassets */; };
 		35E74DC01E4880C20014A1BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */; };
-		8EFAC06944620C02BAA16D06 /* libPods-Marco_beta_v1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		357C53A01E4ED1D00021B200 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				357C539F1E4ED1D00021B200 /* FBSDKShareKit.framework in Embed Frameworks */,
+				357C53991E4ED1D00021B200 /* Bolts.framework in Embed Frameworks */,
+				357C539B1E4ED1D00021B200 /* FBSDKCoreKit.framework in Embed Frameworks */,
+				357C539D1E4ED1D00021B200 /* FBSDKLoginKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		357C53941E4ED1D00021B200 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		357C53951E4ED1D00021B200 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		357C53961E4ED1D00021B200 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		357C53971E4ED1D00021B200 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		357C53A11E4ED8B20021B200 /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		35A2A8F21E498BBC00036523 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		35A2A8F41E49958900036523 /* MapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
 		35A2A9141E49B57D00036523 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -47,18 +78,18 @@
 		35A2A91F1E49C4A000036523 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa Han Sans Bold.ttf"; path = "Assets/Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
 		35A2A9201E49C4A000036523 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa Han Sans Regular.ttf"; path = "Assets/Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		35A2A9211E49C4A000036523 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa Han Sans Thin.ttf"; path = "Assets/Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		35E22D8F1E52FA9F006B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E74DB21E4880C20014A1BB /* Marco_beta_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marco_beta_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E74DB51E4880C20014A1BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35E74DB71E4880C20014A1BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35E74DBA1E4880C20014A1BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		35E74DBC1E4880C20014A1BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E74DBF1E4880C20014A1BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35E74DC11E4880C20014A1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35E74DC71E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		35E74DC81E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4A0759909D31167C33412348 /* Pods-Marco_beta_v1.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco_beta_v1.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.debug.xcconfig"; sourceTree = "<group>"; };
-		9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Marco_beta_v1.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3062667DA701704ED812835 /* Pods-Marco_beta_v1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco_beta_v1.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.release.xcconfig"; sourceTree = "<group>"; };
+		FC707EE6397A6BEB68B90577 /* Pods_Marco_beta_v1_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marco_beta_v1_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +97,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EFAC06944620C02BAA16D06 /* libPods-Marco_beta_v1.0.a in Frameworks */,
+				357C539A1E4ED1D00021B200 /* FBSDKCoreKit.framework in Frameworks */,
+				357C539E1E4ED1D00021B200 /* FBSDKShareKit.framework in Frameworks */,
+				357C539C1E4ED1D00021B200 /* FBSDKLoginKit.framework in Frameworks */,
+				357C53981E4ED1D00021B200 /* Bolts.framework in Frameworks */,
+				04D202BCED9DDCF44ECD8471 /* Pods_Marco_beta_v1_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +150,13 @@
 		35E74DB41E4880C20014A1BB /* Marco_beta_v1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				35E22D8F1E52FA9F006B5F15 /* Assets.xcassets */,
 				35A2A8F41E49958900036523 /* MapStyle.json */,
 				35E74DB51E4880C20014A1BB /* AppDelegate.swift */,
 				35E74DB71E4880C20014A1BB /* ViewController.swift */,
 				35A2A8F21E498BBC00036523 /* MapViewController.swift */,
+				357C53A11E4ED8B20021B200 /* FBLoginViewController.swift */,
 				35E74DB91E4880C20014A1BB /* Main.storyboard */,
-				35E74DBC1E4880C20014A1BB /* Assets.xcassets */,
 				35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */,
 				35E74DC11E4880C20014A1BB /* Info.plist */,
 			);
@@ -130,7 +166,11 @@
 		47CA3AE73B6E9AC0BBC848C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9E8C2BFB93DA1947E065D3D8 /* libPods-Marco_beta_v1.0.a */,
+				357C53941E4ED1D00021B200 /* Bolts.framework */,
+				357C53951E4ED1D00021B200 /* FBSDKCoreKit.framework */,
+				357C53961E4ED1D00021B200 /* FBSDKLoginKit.framework */,
+				357C53971E4ED1D00021B200 /* FBSDKShareKit.framework */,
+				FC707EE6397A6BEB68B90577 /* Pods_Marco_beta_v1_0.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,6 +197,7 @@
 				35E74DB01E4880C20014A1BB /* Resources */,
 				5C30DB39B1D2B4FBA730797A /* [CP] Embed Pods Frameworks */,
 				38EF597E130C4E1E7201B26D /* [CP] Copy Pods Resources */,
+				357C53A01E4ED1D00021B200 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,13 +254,13 @@
 				35A2A9271E49C4A000036523 /* Lato-HairlineItalic.ttf in Resources */,
 				35A2A9291E49C4A000036523 /* Lato-Light.ttf in Resources */,
 				35E74DC01E4880C20014A1BB /* LaunchScreen.storyboard in Resources */,
+				35E22D901E52FA9F006B5F15 /* Assets.xcassets in Resources */,
 				35A2A9281E49C4A000036523 /* Lato-Italic.ttf in Resources */,
 				35A2A9251E49C4A000036523 /* Lato-BoldItalic.ttf in Resources */,
 				35A2A92C1E49C4A000036523 /* Spoqa Han Sans Bold.ttf in Resources */,
 				35A2A92D1E49C4A000036523 /* Spoqa Han Sans Regular.ttf in Resources */,
 				35A2A9231E49C4A000036523 /* Lato-BlackItalic.ttf in Resources */,
 				35A2A9261E49C4A000036523 /* Lato-Hairline.ttf in Resources */,
-				35E74DBD1E4880C20014A1BB /* Assets.xcassets in Resources */,
 				35A2A9221E49C4A000036523 /* Lato-Black.ttf in Resources */,
 				35A2A92B1E49C4A000036523 /* Lato-Regular.ttf in Resources */,
 				35E74DBB1E4880C20014A1BB /* Main.storyboard in Resources */,
@@ -284,6 +325,7 @@
 			files = (
 				35E74DB81E4880C20014A1BB /* ViewController.swift in Sources */,
 				35A2A8F31E498BBC00036523 /* MapViewController.swift in Sources */,
+				357C53A21E4ED8B20021B200 /* FBLoginViewController.swift in Sources */,
 				35E74DB61E4880C20014A1BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +456,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 446SPWE29H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Marco_beta_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marco.Marco-beta-v1-0";
@@ -428,6 +474,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 446SPWE29H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Marco_beta_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marco.Marco-beta-v1-0";
