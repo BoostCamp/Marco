@@ -10,6 +10,4 @@ target 'Marco_beta_v1.0' do
     pod 'GoogleMaps'
     pod 'Toucan'
     pod 'Pulsator'
-    pod "PulsingHalo"
-
 end

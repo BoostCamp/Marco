@@ -90,12 +90,10 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Pulsator/Pulsator.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PulsingHalo/PulsingHalo.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toucan/Toucan.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Pulsator/Pulsator.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PulsingHalo/PulsingHalo.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Toucan/Toucan.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -9,11 +9,10 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
-//import Pulsator
-//import PulsingHalo
+import Pulsator
 import Toucan
-//import GooglePlaces
-//import GooglePlacePicker
+
+// MARK: - User Defined Colors
 extension UIColor {
     class var untReddishOrange70: UIColor {
         return UIColor(red: 246.0 / 255.0, green: 68.0 / 255.0, blue: 20.0 / 255.0, alpha: 0.7)
@@ -24,6 +23,32 @@ extension UIColor {
     }
 }
 
+// MARK: - Using for temporary data
+class profile {
+    var name = ""
+    var description = ""
+    var numOfMembers = 0
+    var numOfPosts = 0
+    var image: UIImage!
+    
+    init(name: String, description: String, image: UIImage){
+        self.name = name
+        self.description = description
+        self.image = image
+        numOfMembers = 1
+        numOfPosts = 1
+    }
+    
+    static func createDummy()->[profile] {
+        return [ profile(name:"Tom",description:"Hello World!",image: UIImage(named: "profile1")!),
+                 profile(name:"Sara", description:"Hello Rookie!", image: UIImage(named: "profile2")!),
+                 profile(name:"Seokin", description:"Hello Everyone!",image: UIImage(named: "profile")!)
+               ]
+    }
+}
+
+
+// MARK : - Extension for UIImage
 extension UIImage {
     func resized(withPercentage percentage: CGFloat) -> UIImage? {
         let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
@@ -56,10 +81,13 @@ extension UIImage {
     
 }
 
+
+// MARK: - Map View Controller using Google Map SDK
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //var placeClient: GMSPlacesClient!
     
     let locationManager = CLLocationManager()
+    let dummyData = userProfile.createDummy()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +135,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func drawMap(lati: CLLocationDegrees?, longi: CLLocationDegrees?) {
         if lati != nil && longi != nil {
             let camera = GMSCameraPosition.camera(withLatitude: lati!, longitude:  longi!, zoom: 14)
-            let mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: 0, height: 0), camera: camera)
+            let mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: 414, height:715), camera: camera)
+            
+            mapView.delegate = self
             //mapView.isMyLocationEnabled = true
             
             do {
@@ -121,20 +151,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 NSLog("One or more of the map styles failed to load. \(error)")
             }
             
-            self.view = mapView
+            // mapView.addSubview( self.view.viewWithTag(5)! )
+            // mapView.tag = 3
+            self.view.viewWithTag(1)!.addSubview( mapView )
+            //self.view.viewWithTag(3)!.sendSubview(toBack: self.view.viewWithTag(5)! )
+            //self.view.viewWithTag(5)?.bringSubview(toFront: self.view)
+            //self.view.viewWithTag(5)?.layer.zPosition = 1.0
             
             // Draw Marker
             let profileImage = UIImage(named: "profile")
             
             let marker = GMSMarker()
             
-            //let pulse = Pulsator()
-            //marker.layer.addSublayer(pulse)
-            //pulse.start()
+            let pulse = Pulsator()
+            marker.layer.addSublayer(pulse)
+            pulse.start()
             
             print(marker.layer)
             
-            marker.appearAnimation = kGMSMarkerAnimationPop
+            //marker.appearAnimation = kGMSMarkerAnimationPop
             marker.position = CLLocationCoordinate2DMake(lati!, longi!)
             //marker.appearAnimation = kGMSMarkerAnimationPop
             marker.icon = Toucan( image: (profileImage?.circleMasked)! )
@@ -146,11 +181,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             
             let otherMarker = GMSMarker()
             
-            otherMarker.appearAnimation = kGMSMarkerAnimationPop
+            //otherMarker.appearAnimation = kGMSMarkerAnimationPop
             otherMarker.position = CLLocationCoordinate2DMake(51.517353, -0.133305)
             //marker.appearAnimation = kGMSMarkerAnimationPop
             otherMarker.icon = Toucan(image: UIImage(named: "group")! )
-                                .resize( CGSize(width: 33.3, height: 33.3), fitMode: Toucan.Resize.FitMode.clip).image
+                                .resize( CGSize(width: 33.3,    height: 33.3), fitMode: Toucan.Resize.FitMode.crop).image
                 
             otherMarker.map = mapView
 
@@ -167,9 +202,41 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print("tatpaptpap")
+        print(marker)
+        
+        if self.view.viewWithTag(5)?.isHidden == true {
+            self.view.viewWithTag(5)?.isHidden = false
+        }
+        else {
+            self.view.viewWithTag(5)?.isHidden = true
+        }
         return true
     }
     
+    struct Storyboard {
+        static let CellIdentifier = "Profile Cell"
+    }
     
+    
+}
+
+
+extension MapViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dummyData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! profileCollectionViewCell
+        let prof = dummyData[(indexPath as NSIndexPath).row]
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 6.0
+        cell.image.image = Toucan(image: prof.image).resize( CGSize(width:60,height:60), fitMode: Toucan.Resize.FitMode.crop).maskWithEllipse().image
+        cell.name.text = prof.name
+        
+        return cell
+    }
 }
