@@ -4,19 +4,23 @@ PODS:
   - GoogleMaps/Base (2.2.0)
   - GoogleMaps/Maps (2.2.0):
     - GoogleMaps/Base
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - Pulsator (0.3.0)
   - Toucan (0.6.0)
 
 DEPENDENCIES:
   - GoogleMaps
+  - GooglePlaces
   - Pulsator
   - Toucan
 
 SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   Pulsator: 0191f14f7ab82d6dbde6fdbde42036f07a4450e3
   Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
 
-PODFILE CHECKSUM: 86d9a02621040f3f8d7769e3a259641352d468a8
+PODFILE CHECKSUM: b3b105bdcd68b406979a4887b78c2801302b9079
 
 COCOAPODS: 1.2.0

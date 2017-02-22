@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Marco_beta_v1.0.xcscheme</key>
+		<key>Pods-Marco.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CF286F9399136D0FCA559D6A11A17B0</key>
+		<key>1E1FFB82EBAAB611B49DE51157CC71AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF05DDF1EF0E2C0849E8E368CB774A2D</key>
+		<key>2E49296A240A1AB14B83C92D98313EDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0D31A9CC0E493771CB97D484F1A1432</key>
+		<key>C6F245CD20B395D337F7984D746D6BAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
