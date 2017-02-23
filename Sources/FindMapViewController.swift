@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import Firebase
 import Pulsator
 import Toucan
 
@@ -16,11 +17,13 @@ import Toucan
 class profile {
     var name = ""
     var description = ""
+    var index: Int!
     var numOfMembers = 0
     var numOfPosts = 0
     var image: UIImage!
     
-    init(name: String, description: String, image: UIImage){
+    init(index: Int, name: String, description: String, image: UIImage){
+        self.index = index
         self.name = name
         self.description = description
         self.image = image
@@ -29,57 +32,37 @@ class profile {
     }
     
     static func createDummy()->[profile] {
-        return [ profile(name:"Tom",description:"Hello World!",image: UIImage(named: "profile1")!),
-                 profile(name:"Alice", description:"Hello Rookie!", image: UIImage(named: "profile2")!),
-                 profile(name:"Seokin", description:"Hello Everyone!",image: UIImage(named: "profile")!)
+        return [ profile(index: 1, name:"Tom",description:"Hello World!",image: UIImage(named: "profile1")!),
+                 profile(index: 2, name:"Alice", description:"Hello Rookie!", image: UIImage(named: "profile2")!),
+                 profile(index: 3, name:"Seokin", description:"Hello Everyone!",image: UIImage(named: "profile")!)
                ]
     }
 }
-
-
-// MARK : - Extension for UIImage
-extension UIImage {
-    func resized(withPercentage percentage: CGFloat) -> UIImage? {
-        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
-        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        draw(in: CGRect(origin: .zero, size: canvasSize))
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-    func resized(toWidth width: CGFloat) -> UIImage? {
-        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
-        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        draw(in: CGRect(origin: .zero, size: canvasSize))
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-    
-    var isPortrait:  Bool    { return size.height > size.width }
-    var isLandscape: Bool    { return size.width > size.height }
-    var breadth:     CGFloat { return min(size.width, size.height) }
-    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
-    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
-    var circleMasked: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
-        UIBezierPath(roundedRect: breadthRect, cornerRadius: breadth/2).addClip()
-        UIImage(cgImage: cgImage).draw(in: breadthRect)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-    
-}
-
 
 // MARK: - Map View Controller using Google Map SDK
 class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //var placeClient: GMSPlacesClient!
     
+    class MarkerInfo {
+        let index: Int
+        let marker: GMSMarker
+        var isActive: Bool
+        
+        init(index: Int, marker: GMSMarker, isActive: Bool){
+            self.index = index
+            self.marker = marker
+            self.isActive = isActive
+        }
+    }
+    
     let locationManager = CLLocationManager()
     let dummyData = userProfile.createDummy()
-    
     let pulse = Pulsator()
-    var mapView: GMSMapView!
+    
+    private var mapView: GMSMapView!
+    private var otherMarkers: Array<MarkerInfo>!
+    var selectedIndex = 0
+    var isMarkerDraw = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,16 +72,32 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
-        
         self.navigationController?.navigationBar.backgroundColor = .white
         
-        // Draw MapView
-        let lati = self.locationManager.location?.coordinate.latitude
-        let longi = self.locationManager.location?.coordinate.longitude
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.drawMap(lati: lati, longi: longi)
+        //let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let loginViewController = DataController.sharedInstance().loginViewController
         
-        // London : 51.512253, -0.123205
+        if FIRAuth.auth()?.currentUser == nil {
+           present( loginViewController! , animated: false, completion: nil )
+        }
+        else
+        {
+            let lati = self.locationManager.location?.coordinate.latitude
+            let longi = self.locationManager.location?.coordinate.longitude
+            
+            otherMarkers = []
+            
+            insertMarkerInformation()
+            // Draw MapView
+            self.drawMap(lati: 51.512253, longi: -0.123205)
+            // London : 51.512253, -0.123205
+            self.view.addSubview( (self.view.viewWithTag(5))! )
+        }
         
     }
     
@@ -113,11 +112,9 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         self.drawMap(lati: lati, longi: longi)
     }
     
-    
-    
     func drawMap(lati: CLLocationDegrees?, longi: CLLocationDegrees?) {
         if lati != nil && longi != nil {
-            let camera = GMSCameraPosition.camera(withLatitude: lati!, longitude:  longi!, zoom: 14)
+            let camera = GMSCameraPosition.camera(withLatitude: lati!, longitude:  longi!, zoom: 13)
             mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: 414, height:715), camera: camera)
             
             mapView.delegate = self
@@ -169,54 +166,145 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             
             print(marker.layer)
             
+            if isMarkerDraw {
+                drawMarker()
+            }
+        }
+    }
+    
+    
+    func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
+        let textColor = UIColor.white
+        let textFont = UIFont(name: "SpoqaHanSans-Bold", size: 12)!
+        
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
+        
+        let textFontAttributes = [
+            NSFontAttributeName: textFont,
+            NSForegroundColorAttributeName: textColor,
+            ] as [String : Any]
+        
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        
+        let rect = CGRect(origin: point, size: image.size)
+        text.draw(in: rect, withAttributes: textFontAttributes)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+    func insertMarkerInformation(){
+        
+        var coordArray = [ CLLocationCoordinate2D ]()
+        coordArray.append( CLLocationCoordinate2DMake(51.517353, -0.143305) )
+        coordArray.append( CLLocationCoordinate2DMake(51.528853, -0.102305) )
+        coordArray.append( CLLocationCoordinate2DMake(51.511853, -0.112305) )
+        
+        for i in 0...coordArray.count-1 {
+            let otherMarker = GMSMarker()
+            otherMarker.position = coordArray[i]
+            otherMarker.appearAnimation = GMSMarkerAnimation.pop
+            otherMarker.icon = textToImage(
+                    drawText: NSString(string:"\(i+1)"),
+                    inImage: Toucan(image: UIImage(named: "group")!).resizeByCropping( CGSize(width: 33.3,height: 33.3) ).image,
+                    atPoint: CGPoint(x:12.5,y:11)
+                    )
+            
+            
+            if i == 0 {
+                otherMarker.icon = otherMarker.icon?.tint(tintColor: .untWarmBlue)
+            }
+            
+            otherMarkers.append( MarkerInfo(index: i, marker: otherMarker, isActive: (i==0) ) )
         }
     }
     
     func drawMarker() {
-        let otherMarker = GMSMarker()
         if mapView != nil {
-            //otherMarker.appearAnimation = kGMSMarkerAnimationPop
-            otherMarker.position = CLLocationCoordinate2DMake(51.517353, -0.133305)
-            //marker.appearAnimation = kGMSMarkerAnimationPop
-            otherMarker.icon = Toucan(image: UIImage(named: "group")! )
-                .resize( CGSize(width: 33.3,    height: 33.3), fitMode: Toucan.Resize.FitMode.crop).image
-            
-            otherMarker.map = mapView
+            for marker  in otherMarkers {
+                marker.marker.map = mapView
+            }
         }
     }
     
     func removeMarker() {
         if mapView != nil {
-            
+            for marker  in otherMarkers {
+                marker.marker.map = nil
+            }
         }
     }
+    func getMarker(byIndex index: Int) -> MarkerInfo {
+        return otherMarkers[index]
+    }
     
+    func changeCurrentMarker(byMarker m: MarkerInfo){
+        m.marker.icon = m.marker.icon?.tint(tintColor: .untWarmBlue)
+        otherMarkers[selectedIndex].marker.icon = textToImage(
+            drawText: NSString(string:"\(selectedIndex+1)"),
+            inImage: Toucan(image: UIImage(named: "group")!).resizeByCropping( CGSize(width: 33.3,height: 33.3) ).image,
+            atPoint: CGPoint(x:12.5,y:11)
+        )
+        
+        //m.isActive = true
+        otherMarkers[selectedIndex].isActive = false
+        selectedIndex = m.index
+        
+        (self.view.viewWithTag(5) as! UICollectionView).scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        for m in otherMarkers {
+            if m.marker == marker  {
+                if m.index != selectedIndex {
+                    //change selected marker
+                    changeCurrentMarker(byMarker: m)
+                }
+                // else nothing happened
+            }
+        }
+        return true
+    }
+
     @IBAction func findButtonClicked(_ sender: Any) {
-        if self.view.viewWithTag(5)?.isHidden == true {
+        isMarkerDraw = !isMarkerDraw
+        
+        if isMarkerDraw {
             self.view.viewWithTag(5)?.isHidden = false
-           // pulse.stop()
+            drawMarker()
         }
         else {
             self.view.viewWithTag(5)?.isHidden = true
-            //pulse.start()
+            removeMarker()
         }
     }
     
     @IBAction func refreshButtonClicked(_ sender: Any) {
         locationManager.startUpdatingLocation()
-        let lati = self.locationManager.location?.coordinate.latitude
-        let longi = self.locationManager.location?.coordinate.longitude
+        //let lati = self.locationManager.location?.coordinate.latitude
+        //let longi = self.locationManager.location?.coordinate.longitude
+        //self.drawMap(lati: lati, longi: longi)
+        self.drawMap(lati: 51.512253, longi: -0.123205)
         
-        self.drawMap(lati: lati, longi: longi)
     }
 
     struct Storyboard {
         static let CellIdentifier = "Profile Cell"
     }
     
-    
 }
 
+extension UICollectionView {
+    var centerCellIndexPath: IndexPath? {
+        if let centerIndexPath = self.indexPathForItem(at: self.center) {
+            return centerIndexPath
+        }
+        return nil
+    }
+}
 
 extension FindMapViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -237,13 +325,30 @@ extension FindMapViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "UserDetailViewController") as! UserDetailViewController
         
         detailController.detail = self.dummyData[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-    
+
+}
+
+extension FindMapViewController: UICollectionViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let collectionView = scrollView as! UICollectionView
+        print(collectionView.center)
+        
+        let indexPath:IndexPath? = collectionView.indexPathForItem(at: CGPoint(x:self.view.frame.width/2 + collectionView.contentOffset.x,y:50))
+        
+        //print(indexPath?.row)
+        if let changedIndex = indexPath?.row {
+            if( selectedIndex != changedIndex ){
+                // Selection Changed
+                changeCurrentMarker(byMarker: getMarker(byIndex: changedIndex))
+            }
+        }
+    }
     
 }

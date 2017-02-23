@@ -20,8 +20,8 @@ class UserDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        //self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.title = detail.name
         
         UserImageView.image = Toucan( image: ( detail.image.circleMasked)! )

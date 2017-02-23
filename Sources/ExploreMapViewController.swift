@@ -180,7 +180,7 @@ class ExploreMapViewController: UIViewController, CLLocationManagerDelegate, GMS
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print(marker)
+        
         
         return true
     }
@@ -224,6 +224,7 @@ extension ExploreMapViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "GatheringDetailViewController") as! GatheringDetailViewController
         
+        print(indexPath)
         detailController.detail = self.dummyData[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }

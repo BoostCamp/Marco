@@ -21,6 +21,16 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.591775540027-rq3eta2qun3upjrf48p9q1ffjnf2ffb0</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb1899972576898007</string>
@@ -32,7 +42,7 @@
 	<key>FacebookAppID</key>
 	<string>1899972576898007</string>
 	<key>FacebookDisplayName</key>
-	<string>marco</string>
+	<string>Marco</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

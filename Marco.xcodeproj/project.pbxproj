@@ -39,6 +39,10 @@
 		35E74DBB1E4880C20014A1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DB91E4880C20014A1BB /* Main.storyboard */; };
 		35E74DC01E4880C20014A1BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */; };
 		35E7C5381E5BF67E00B0CFF9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7C5371E5BF67E00B0CFF9 /* SettingViewController.swift */; };
+		35EDADED1E5DA42F009D8814 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35EDADEC1E5DA42F009D8814 /* GoogleService-Info.plist */; };
+		35EDADEF1E5DD680009D8814 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDADEE1E5DD680009D8814 /* UIImageExtension.swift */; };
+		35EDADF11E5DEDC2009D8814 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDADF01E5DEDC2009D8814 /* LoginViewController.swift */; };
+		35EDADF71E5E8D20009D8814 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDADF61E5E8D20009D8814 /* DataController.swift */; };
 		C08C603DD897934F1444AC0E /* Pods_Marco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583C831ADB38AF2E9BA24C85 /* Pods_Marco.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +102,11 @@
 		35E74DC71E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		35E74DC81E4883140014A1BB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		35E7C5371E5BF67E00B0CFF9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		35EDADEC1E5DA42F009D8814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		35EDADEE1E5DD680009D8814 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		35EDADF01E5DEDC2009D8814 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		35EDADF21E5DF777009D8814 /* Marco.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marco.entitlements; sourceTree = "<group>"; };
+		35EDADF61E5E8D20009D8814 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4206D3B22D16250BEED5F974 /* Pods-Marco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marco/Pods-Marco.release.xcconfig"; sourceTree = "<group>"; };
 		4A0759909D31167C33412348 /* Pods-Marco_beta_v1.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marco_beta_v1.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marco_beta_v1.0/Pods-Marco_beta_v1.0.debug.xcconfig"; sourceTree = "<group>"; };
 		583C831ADB38AF2E9BA24C85 /* Pods_Marco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +152,7 @@
 		35E74DA91E4880C20014A1BB = {
 			isa = PBXGroup;
 			children = (
+				35EDADF21E5DF777009D8814 /* Marco.entitlements */,
 				35E74DB41E4880C20014A1BB /* Source */,
 				35A2A8F61E49ABAE00036523 /* Fonts */,
 				35E74DB31E4880C20014A1BB /* Products */,
@@ -163,26 +173,54 @@
 			isa = PBXGroup;
 			children = (
 				35E22D8F1E52FA9F006B5F15 /* Assets.xcassets */,
-				35A2A8F41E49958900036523 /* MapStyle.json */,
 				35E74DB51E4880C20014A1BB /* AppDelegate.swift */,
-				3512C5771E5724B500F454BA /* ColorExtension.swift */,
-				3512C5711E56ED2900F454BA /* TimelineCell.swift */,
-				354233351E544F6500547209 /* ProfileCell.swift */,
+				35EDADF61E5E8D20009D8814 /* DataController.swift */,
+				35E74DB91E4880C20014A1BB /* Main.storyboard */,
+				35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */,
+				35E74DC11E4880C20014A1BB /* Info.plist */,
+				35EDADEC1E5DA42F009D8814 /* GoogleService-Info.plist */,
+				35EDADF51E5E309A009D8814 /* Cell */,
+				35EDADF41E5E307B009D8814 /* Extension */,
+				35EDADF31E5E305C009D8814 /* ViewController */,
+			);
+			name = Source;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		35EDADF31E5E305C009D8814 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
 				35E74DB71E4880C20014A1BB /* ViewController.swift */,
 				35A2A8F21E498BBC00036523 /* FindMapViewController.swift */,
 				350016D91E59919A002F48B2 /* UserDetailViewController.swift */,
 				3512C5731E56EE9900F454BA /* ExploreMapViewController.swift */,
 				35A5F2C71E583351007E99DE /* GatheringDetailViewController.swift */,
 				354233371E54884A00547209 /* ProfileViewController.swift */,
-				3512C5751E56F11100F454BA /* GatheringCell.swift */,
 				354233331E54366400547209 /* ChatListViewController.swift */,
 				35E7C5371E5BF67E00B0CFF9 /* SettingViewController.swift */,
-				35E74DB91E4880C20014A1BB /* Main.storyboard */,
-				35E74DBE1E4880C20014A1BB /* LaunchScreen.storyboard */,
-				35E74DC11E4880C20014A1BB /* Info.plist */,
+				35EDADF01E5DEDC2009D8814 /* LoginViewController.swift */,
 			);
-			name = Source;
-			path = Sources;
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		35EDADF41E5E307B009D8814 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				35A2A8F41E49958900036523 /* MapStyle.json */,
+				35EDADEE1E5DD680009D8814 /* UIImageExtension.swift */,
+				3512C5771E5724B500F454BA /* ColorExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		35EDADF51E5E309A009D8814 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3512C5711E56ED2900F454BA /* TimelineCell.swift */,
+				354233351E544F6500547209 /* ProfileCell.swift */,
+				3512C5751E56F11100F454BA /* GatheringCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		47CA3AE73B6E9AC0BBC848C1 /* Frameworks */ = {
@@ -250,6 +288,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 446SPWE29H;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -277,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A2A9241E49C4A000036523 /* Lato-Bold.ttf in Resources */,
+				35EDADED1E5DA42F009D8814 /* GoogleService-Info.plist in Resources */,
 				35A2A92E1E49C4A000036523 /* Spoqa Han Sans Thin.ttf in Resources */,
 				35A2A8F51E49958900036523 /* MapStyle.json in Resources */,
 				35A2A9271E49C4A000036523 /* Lato-HairlineItalic.ttf in Resources */,
@@ -360,10 +404,13 @@
 				35A5F2C81E583351007E99DE /* GatheringDetailViewController.swift in Sources */,
 				354233381E54884A00547209 /* ProfileViewController.swift in Sources */,
 				3512C5741E56EE9900F454BA /* ExploreMapViewController.swift in Sources */,
+				35EDADEF1E5DD680009D8814 /* UIImageExtension.swift in Sources */,
 				3512C5761E56F11100F454BA /* GatheringCell.swift in Sources */,
 				35E74DB61E4880C20014A1BB /* AppDelegate.swift in Sources */,
 				3512C5781E5724B500F454BA /* ColorExtension.swift in Sources */,
+				35EDADF71E5E8D20009D8814 /* DataController.swift in Sources */,
 				354233341E54366400547209 /* ChatListViewController.swift in Sources */,
+				35EDADF11E5DEDC2009D8814 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +539,7 @@
 			baseConfigurationReference = 1D3C7D5197D5B4A82AD5B8DF /* Pods-Marco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Marco.entitlements;
 				DEVELOPMENT_TEAM = 446SPWE29H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,6 +600,7 @@
 			baseConfigurationReference = 4206D3B22D16250BEED5F974 /* Pods-Marco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Marco.entitlements;
 				DEVELOPMENT_TEAM = 446SPWE29H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

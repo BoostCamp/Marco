@@ -6,10 +6,25 @@ target 'Marco' do
 	use_frameworks!
   # Pods for Marco_beta_v1.0
 	source 'https://github.com/CocoaPods/Specs.git'
-	platform :ios, '10.2'
-    pod 'GoogleMaps'
+	platform :ios, '10.3'
+
+	# Pods for Google API
+		pod 'GoogleMaps'
 		pod 'GooglePlaces'
-#		pod 'Google-Maps-iOS-Utils'
+
+	# Pods for Image Editing & Animation
     pod 'Toucan'
     pod 'Pulsator'
+		
+	# Pods for Firebase SDK
+		pod 'Firebase/Core'
+		pod 'Firebase/Auth'
+		pod 'Firebase/Database'
+		pod 'GoogleSignIn'
+
+	# Pods for Facebook Login SDK
+		pod 'FBSDKCoreKit'
+		pod 'FBSDKShareKit'
+		pod 'FBSDKLoginKit'
+
 end
