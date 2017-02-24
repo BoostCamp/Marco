@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 class DataController: NSObject {
     var loginViewController: UIViewController!
+    let imageCache = AutoPurgingImageCache()
     
     struct StaticInstance {
         static var instance: DataController?

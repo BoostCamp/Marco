@@ -24,3 +24,8 @@ class timelineTableViewCell: UITableViewCell
     @IBOutlet weak var descriptionLabel: UITextView!
     
 }
+
+class emptyTimelineCell: UITableViewCell
+{
+    
+}

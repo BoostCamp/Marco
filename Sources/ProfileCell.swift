@@ -12,4 +12,8 @@ class profileCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var statusMessage: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var postnum: UIButton!
+    @IBOutlet weak var likenum: UIButton!
 }

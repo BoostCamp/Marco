@@ -15,7 +15,10 @@ target 'Marco' do
 	# Pods for Image Editing & Animation
     pod 'Toucan'
     pod 'Pulsator'
-		
+		pod 'Alamofire'
+		pod 'AlamofireImage'
+		pod 'Nuke'
+
 	# Pods for Firebase SDK
 		pod 'Firebase/Core'
 		pod 'Firebase/Auth'

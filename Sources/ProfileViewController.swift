@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return dummyData.count + 1
     }
     
@@ -64,7 +65,16 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             let dummy = dummyData[(indexPath as NSIndexPath).row - 1]
             
             cell.dateLabel.text = dummy.timestamp
-            cell.descriptionLabel.text = dummy.description
+            
+            let pstyle = NSMutableParagraphStyle()
+            pstyle.lineSpacing = 1.25
+            pstyle.lineHeightMultiple = 1.25
+            let descriptionText = NSMutableAttributedString(string: dummy.description)
+            descriptionText.addAttribute(NSParagraphStyleAttributeName, value: pstyle, range: NSMakeRange(0, descriptionText.length))
+            
+            cell.descriptionLabel.attributedText = descriptionText
+            
+            //cell.descriptionLabel.text = dummy.description
             
             let path = UIBezierPath()
             path.move(to: CGPoint(x:10.0 ,y:45.0) )

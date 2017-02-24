@@ -21,4 +21,8 @@ extension UIColor {
     class var untWarmBlue: UIColor {
         return UIColor(red: 68.0 / 255.0, green: 65.0 / 255.0, blue: 216.0 / 255.0, alpha: 1.0)
     }
+    
+    class var untBluegrey50: UIColor {
+        return UIColor(red: 131.0 / 255.0, green: 146.0 / 255.0, blue: 166.0 / 255.0, alpha: 0.5)
+    }
 }

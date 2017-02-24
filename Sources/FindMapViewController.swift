@@ -12,30 +12,19 @@ import GoogleMaps
 import Firebase
 import Pulsator
 import Toucan
+import Alamofire
+import AlamofireImage
+//import Nuke
 
-// MARK: - Using for temporary data
-class profile {
-    var name = ""
-    var description = ""
-    var index: Int!
-    var numOfMembers = 0
-    var numOfPosts = 0
-    var image: UIImage!
+class MarkerInfo {
+    let index: Int
+    let marker: GMSMarker
+    var isActive: Bool
     
-    init(index: Int, name: String, description: String, image: UIImage){
+    init(index: Int, marker: GMSMarker, isActive: Bool){
         self.index = index
-        self.name = name
-        self.description = description
-        self.image = image
-        numOfMembers = 1
-        numOfPosts = 1
-    }
-    
-    static func createDummy()->[profile] {
-        return [ profile(index: 1, name:"Tom",description:"Hello World!",image: UIImage(named: "profile1")!),
-                 profile(index: 2, name:"Alice", description:"Hello Rookie!", image: UIImage(named: "profile2")!),
-                 profile(index: 3, name:"Seokin", description:"Hello Everyone!",image: UIImage(named: "profile")!)
-               ]
+        self.marker = marker
+        self.isActive = isActive
     }
 }
 
@@ -43,26 +32,19 @@ class profile {
 class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //var placeClient: GMSPlacesClient!
     
-    class MarkerInfo {
-        let index: Int
-        let marker: GMSMarker
-        var isActive: Bool
-        
-        init(index: Int, marker: GMSMarker, isActive: Bool){
-            self.index = index
-            self.marker = marker
-            self.isActive = isActive
-        }
-    }
+    
     
     let locationManager = CLLocationManager()
-    let dummyData = userProfile.createDummy()
+    var dummyData = profile.createDummy()
     let pulse = Pulsator()
     
     private var mapView: GMSMapView!
     private var otherMarkers: Array<MarkerInfo>!
     var selectedIndex = 0
     var isMarkerDraw = false
+    var currentUserImage : UIImage!
+    var currentUserProfile: profile!
+    //let imageCache = AutoPurgingImageCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,16 +69,51 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         }
         else
         {
-            let lati = self.locationManager.location?.coordinate.latitude
-            let longi = self.locationManager.location?.coordinate.longitude
+            //let lati = self.locationManager.location?.coordinate.latitude
+            //let longi = self.locationManager.location?.coordinate.longitude
             
             otherMarkers = []
+
+            //currentUserProfile.location = CLLocation(latitude: 51.512253, longitude: -0.123205)
             
-            insertMarkerInformation()
+            if let currentUserProfilePictureURL = FIRAuth.auth()?.currentUser?.photoURL {
+                Alamofire.request( currentUserProfilePictureURL ).responseImage { response in
+                    //print(response)
+                    
+                    if let image = response.result.value {
+                        print("image downloaded:  \(image)")
+                        self.currentUserImage = image
+                        //currentUserProfile.image = image
+                    }
+                    else {
+                        print("error: cant find image source")
+                    }
+                }
+            }
+                
+            if currentUserImage == nil {
+                currentUserImage = UIImage(named: "default-user")
+                //self.currentUserProfileImage = currentUserImage
+            }
+            
+            currentUserProfile = profile(index: 0, name: (FIRAuth.auth()?.currentUser?.displayName) ?? "", description: "", image: currentUserImage, location: CLLocation(latitude: 51.512253, longitude: -0.123205) )
+            
+            for dummy in dummyData {
+                dummy.distanceFromCurrentUser = dummy.location.distance(from: currentUserProfile.location )
+            }
+            
+            dummyData = dummyData.sorted{ $0.distanceFromCurrentUser < $1.distanceFromCurrentUser }
+            
+            for i in 0...dummyData.count - 1 {
+                dummyData[i].index = i+1
+            }
+            
             // Draw MapView
+            insertMarkerInformation()
             self.drawMap(lati: 51.512253, longi: -0.123205)
             // London : 51.512253, -0.123205
             self.view.addSubview( (self.view.viewWithTag(5))! )
+            
         }
         
     }
@@ -104,7 +121,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //위치가 업데이트될때마다
         if let coor = manager.location?.coordinate{
-            print("latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude))
+            //print("latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude))
         }
         
         let lati = self.locationManager.location?.coordinate.latitude
@@ -114,6 +131,8 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func drawMap(lati: CLLocationDegrees?, longi: CLLocationDegrees?) {
         if lati != nil && longi != nil {
+            
+            
             let camera = GMSCameraPosition.camera(withLatitude: lati!, longitude:  longi!, zoom: 13)
             mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: 414, height:715), camera: camera)
             
@@ -133,11 +152,13 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             
             // mapView.addSubview( self.view.viewWithTag(5)! )
             // mapView.tag = 3
+            
             self.view.viewWithTag(1)!.addSubview( mapView )
             
             // Draw Marker
+            
             let profileImage =
-                Toucan( image: (UIImage(named: "profile")?.circleMasked)! )
+                Toucan( image: currentUserImage )
                 .resize(CGSize(width: 66.7, height: 66.7), fitMode: Toucan.Resize.FitMode.clip)
                 .maskWithEllipse(borderWidth: 7.0, borderColor: .white)
                 .maskWithEllipse(borderWidth: 3.5, borderColor: .untReddishOrange70).image
@@ -164,7 +185,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             marker.iconView = aview
             pulse.start()
             
-            print(marker.layer)
+            //print(marker.layer)
             
             if isMarkerDraw {
                 drawMarker()
@@ -198,14 +219,9 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func insertMarkerInformation(){
         
-        var coordArray = [ CLLocationCoordinate2D ]()
-        coordArray.append( CLLocationCoordinate2DMake(51.517353, -0.143305) )
-        coordArray.append( CLLocationCoordinate2DMake(51.528853, -0.102305) )
-        coordArray.append( CLLocationCoordinate2DMake(51.511853, -0.112305) )
-        
-        for i in 0...coordArray.count-1 {
+        for i in 0...dummyData.count-1 {
             let otherMarker = GMSMarker()
-            otherMarker.position = coordArray[i]
+            otherMarker.position = dummyData[i].location.coordinate
             otherMarker.appearAnimation = GMSMarkerAnimation.pop
             otherMarker.icon = textToImage(
                     drawText: NSString(string:"\(i+1)"),
@@ -258,7 +274,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         for m in otherMarkers {
-            if m.marker == marker  {
+            if m.marker == marker {
                 if m.index != selectedIndex {
                     //change selected marker
                     changeCurrentMarker(byMarker: m)
@@ -316,13 +332,31 @@ extension FindMapViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! profileCollectionViewCell
+        
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.lineSpacing = 1.25
+        pstyle.lineHeightMultiple = 1.25
         let prof = dummyData[(indexPath as NSIndexPath).row]
         
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 6.0
+        
         cell.image.image = Toucan(image: prof.image).resize( CGSize(width:60,height:60), fitMode: Toucan.Resize.FitMode.crop ).maskWithEllipse().image
+        
         cell.name.text = prof.name
         
+        let descriptionText = NSMutableAttributedString(string: prof.description)
+        descriptionText.addAttribute(NSParagraphStyleAttributeName, value: pstyle, range: NSMakeRange(0, descriptionText.length))
+        
+        cell.statusMessage.attributedText = descriptionText
+        cell.statusMessage.textAlignment = .center
+        //cell.statusMessage.text = prof.description
+        
+        //print("\(prof.postnum)")
+        cell.postnum.setTitle("\(prof.postnum)", for: .normal)
+        cell.likenum.setTitle("\(prof.likenum)", for: .normal)
+        cell.distance.text = "\((prof.distanceFromCurrentUser/1000).roundToPlaces(places: 2))km"
+    
         return cell
     }
 
@@ -338,7 +372,7 @@ extension FindMapViewController: UICollectionViewDataSource {
 extension FindMapViewController: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let collectionView = scrollView as! UICollectionView
-        print(collectionView.center)
+        //print(collectionView.center)
         
         let indexPath:IndexPath? = collectionView.indexPathForItem(at: CGPoint(x:self.view.frame.width/2 + collectionView.contentOffset.x,y:50))
         
@@ -349,6 +383,8 @@ extension FindMapViewController: UICollectionViewDelegate {
                 changeCurrentMarker(byMarker: getMarker(byIndex: changedIndex))
             }
         }
+        
+         
     }
     
 }
