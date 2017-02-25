@@ -8,14 +8,14 @@
 
 import UIKit
 
-class timelineHeaderTableViewCell: UITableViewCell
-{
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var listnum: UIButton!
-    @IBOutlet weak var likenum: UIButton!
-    @IBOutlet weak var profileDescription: UILabel!
-    @IBOutlet weak var profileSegmentedControl: UISegmentedControl!
-}
+//class timelineHeaderTableViewCell: UITableViewCell
+//{
+//    @IBOutlet weak var profileImageView: UIImageView!
+//    @IBOutlet weak var listnum: UIButton!
+//    @IBOutlet weak var likenum: UIButton!
+//    @IBOutlet weak var profileDescription: UILabel!
+//    @IBOutlet weak var profileSegmentedControl: UISegmentedControl!
+//}
 
 class timelineTableViewCell: UITableViewCell
 {
@@ -25,7 +25,23 @@ class timelineTableViewCell: UITableViewCell
     
 }
 
+class reviewTableViewCell: UITableViewCell
+{
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var enjoyButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionContainerView: UIView!
+}
+
 class emptyTimelineCell: UITableViewCell
+{
+    
+}
+
+class emptyReviewCell : UITableViewCell
 {
     
 }

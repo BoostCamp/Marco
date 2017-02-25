@@ -12,12 +12,12 @@
 		3512C5741E56EE9900F454BA /* ExploreMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512C5731E56EE9900F454BA /* ExploreMapViewController.swift */; };
 		3512C5761E56F11100F454BA /* GatheringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512C5751E56F11100F454BA /* GatheringCell.swift */; };
 		3512C5781E5724B500F454BA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512C5771E5724B500F454BA /* ColorExtension.swift */; };
+		353B6F4B1E60DB03004C611F /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353B6F4A1E60DB03004C611F /* CommentCell.swift */; };
 		354233341E54366400547209 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354233331E54366400547209 /* ChatListViewController.swift */; };
 		354233361E544F6500547209 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354233351E544F6500547209 /* ProfileCell.swift */; };
 		354233381E54884A00547209 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354233371E54884A00547209 /* ProfileViewController.swift */; };
 		355EB1DC1E601FB400D3F1FE /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355EB1DB1E601FB400D3F1FE /* DataStructure.swift */; };
 		355EB1DE1E60261500D3F1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 355EB1DD1E60261500D3F1FE /* Assets.xcassets */; };
-		355EB1E01E609BEE00D3F1FE /* GatheringMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355EB1DF1E609BEE00D3F1FE /* GatheringMapViewController.swift */; };
 		357C53981E4ED1D00021B200 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53941E4ED1D00021B200 /* Bolts.framework */; };
 		357C53991E4ED1D00021B200 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357C53941E4ED1D00021B200 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35A2A8F31E498BBC00036523 /* FindMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2A8F21E498BBC00036523 /* FindMapViewController.swift */; };
@@ -70,12 +70,12 @@
 		3512C5731E56EE9900F454BA /* ExploreMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreMapViewController.swift; sourceTree = "<group>"; };
 		3512C5751E56F11100F454BA /* GatheringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringCell.swift; sourceTree = "<group>"; };
 		3512C5771E5724B500F454BA /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		353B6F4A1E60DB03004C611F /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		354233331E54366400547209 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		354233351E544F6500547209 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		354233371E54884A00547209 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		355EB1DB1E601FB400D3F1FE /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		355EB1DD1E60261500D3F1FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		355EB1DF1E609BEE00D3F1FE /* GatheringMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringMapViewController.swift; sourceTree = "<group>"; };
 		357C53941E4ED1D00021B200 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		357C53951E4ED1D00021B200 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		357C53961E4ED1D00021B200 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -199,7 +199,6 @@
 				35A2A8F21E498BBC00036523 /* FindMapViewController.swift */,
 				350016D91E59919A002F48B2 /* UserDetailViewController.swift */,
 				3512C5731E56EE9900F454BA /* ExploreMapViewController.swift */,
-				355EB1DF1E609BEE00D3F1FE /* GatheringMapViewController.swift */,
 				35A5F2C71E583351007E99DE /* GatheringDetailViewController.swift */,
 				354233371E54884A00547209 /* ProfileViewController.swift */,
 				354233331E54366400547209 /* ChatListViewController.swift */,
@@ -225,6 +224,7 @@
 				3512C5711E56ED2900F454BA /* TimelineCell.swift */,
 				354233351E544F6500547209 /* ProfileCell.swift */,
 				3512C5751E56F11100F454BA /* GatheringCell.swift */,
+				353B6F4A1E60DB03004C611F /* CommentCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -403,10 +403,10 @@
 			files = (
 				35E74DB81E4880C20014A1BB /* ViewController.swift in Sources */,
 				35A2A8F31E498BBC00036523 /* FindMapViewController.swift in Sources */,
-				355EB1E01E609BEE00D3F1FE /* GatheringMapViewController.swift in Sources */,
 				350016DA1E59919A002F48B2 /* UserDetailViewController.swift in Sources */,
 				354233361E544F6500547209 /* ProfileCell.swift in Sources */,
 				355EB1DC1E601FB400D3F1FE /* DataStructure.swift in Sources */,
+				353B6F4B1E60DB03004C611F /* CommentCell.swift in Sources */,
 				35E7C5381E5BF67E00B0CFF9 /* SettingViewController.swift in Sources */,
 				3512C5721E56ED2900F454BA /* TimelineCell.swift in Sources */,
 				35A5F2C81E583351007E99DE /* GatheringDetailViewController.swift in Sources */,

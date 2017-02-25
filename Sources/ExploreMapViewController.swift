@@ -19,7 +19,7 @@ import Toucan
 class ExploreMapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //var placeClient: GMSPlacesClient!
     let locationManager = CLLocationManager()
-    let dummyData = gathering.createDummy()
+    let dummyData = DataController.sharedInstance().dummyGathering
     let pulse = Pulsator()
     
     private var mapView: GMSMapView!
@@ -209,7 +209,7 @@ class ExploreMapViewController: UIViewController, CLLocationManagerDelegate, GMS
                 atPoint: CGPoint(x:12.5,y:11)
             )
             
-            if i == 0 {
+            if i == selectedIndex {
                 otherMarker.icon = otherMarker.icon?.tint(tintColor: .untWarmBlue)
             }
             
@@ -270,31 +270,42 @@ extension ExploreMapViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! gatheringCollectionViewCell
-        let dummy = dummyData[(indexPath as NSIndexPath).row]
-        
-        cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 6.0
-        cell.gatherImageView.image = Toucan(image: dummy.image).resizeByCropping(CGSize(width: 234, height: 150)).image
-        cell.gatherNameLabel.text = dummy.name
-        cell.gatherDescriptionLabel.text = dummy.dateString + " / " + dummy.locationString
-        
-        if dummy.isClosed {
-            cell.gatherStatusLabel.text = "모집마감"
-            cell.gatherStatusLabel.textColor = .untReddishOrange
-        } else {
-            cell.gatherStatusLabel.text = "모집중"
-            cell.gatherStatusLabel.textColor = .untWarmBlue
+        //if indexPath.row < dummyData.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! gatheringCollectionViewCell
+            let dummy = dummyData[(indexPath as NSIndexPath).row]
+            
+            cell.layer.masksToBounds = true
+            cell.layer.cornerRadius = 6.0
+            cell.gatherImageView.image = Toucan(image: dummy.image).resizeByCropping(CGSize(width: 234, height: 150)).image
+            cell.gatherNameLabel.text = dummy.name
+            cell.gatherDescriptionLabel.text = dummy.dateString + " / " + dummy.locationString
+            
+            if dummy.isClosed {
+                cell.gatherStatusLabel.text = "모집마감"
+                cell.gatherStatusLabel.textColor = .untReddishOrange
+            } else {
+                cell.gatherStatusLabel.text = "모집중"
+                cell.gatherStatusLabel.textColor = .untWarmBlue
         }
-        return cell
+    
+          return cell
     }
+//        }
+//        else {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Gathering Plus Cell", for: indexPath) as! gatheringPlusCell
+//            //cell.plusImage.image = cell.plusImage.image?.tint(tintColor: .white)
+//            return cell
+//        }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "GatheringDetailViewController") as! GatheringDetailViewController
-        
-        print(indexPath)
-        detailController.detail = self.dummyData[(indexPath as NSIndexPath).row]
-        self.navigationController!.pushViewController(detailController, animated: true)
+//        if indexPath.row < dummyData.count{
+            let detailController = self.storyboard!.instantiateViewController(withIdentifier: "GatheringDetailViewController") as! GatheringDetailViewController
+            
+            print(indexPath)
+            detailController.detail = self.dummyData[(indexPath as NSIndexPath).row]
+            self.navigationController!.pushViewController(detailController, animated: true)
+//        }
     }
     
 }

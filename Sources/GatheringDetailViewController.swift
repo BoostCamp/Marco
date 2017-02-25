@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toucan
 
 class GatheringDetailViewController: UITableViewController {
 
@@ -22,6 +23,7 @@ class GatheringDetailViewController: UITableViewController {
     
     @IBOutlet weak var floatingButton: UIButton!
     
+    @IBOutlet weak var withPeopleView: UIView!
     
     var detail: gathering!
 
@@ -55,6 +57,18 @@ class GatheringDetailViewController: UITableViewController {
             gatheringStatusLabel.text = "모집중"
             gatheringStatusLabel.textColor = .untWarmBlue
         }
+        
+        for i in 0...detail.numOfMembers-1 {
+            if i > 4 {
+                let peopleImageView = UIImageView(frame: CGRect(x: 60*i, y: 0, width: 50, height: 50))
+                peopleImageView.image = Toucan(image: (detail.members[i].image?.circleMasked!)! ).resize(CGSize(width: 50, height: 50)).image
+                withPeopleView.addSubview(peopleImageView)
+            }
+            
+            let peopleImageView = UIImageView(frame: CGRect(x: 60*i, y: 0, width: 50, height: 50))
+            peopleImageView.image = Toucan(image: (detail.members[i].image?.circleMasked!)! ).resize(CGSize(width: 50, height: 50)).image
+            withPeopleView.addSubview(peopleImageView)
+        }
         // Do any additional setup after loading the view.
         
     }
@@ -72,6 +86,41 @@ class GatheringDetailViewController: UITableViewController {
     }
     
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if detail.numOfComments == 0 {
+            return 1
+        }
+        else {
+            return detail.numOfComments
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if detail.numOfComments == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCommentCell", for: indexPath) as! emptyCommentCell
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Comment Cell", for: indexPath) as! CommentTableViewCell
+            let comment = detail.comments[ indexPath.row ]
+            
+            cell.commentView.layer.cornerRadius = 10.0
+            cell.dateString.text = comment.dateString
+            cell.commentDescriptionLabel.text = comment.description
+            
+            let newImageView = UIImageView(frame: CGRect(x:0,y:0,width:40,height:40))
+            newImageView.image = //comment.writer.image.circleMasked
+                Toucan(image: comment.writer.image.circleMasked! ).resize(CGSize(width: 40, height: 40)).image
+            cell.profileView.addSubview(newImageView)
+            //cell.imageView?.addSubview(newImageView)
+            
+            cell.writerNameLabel.text = comment.writer.name
+            
+            return cell
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

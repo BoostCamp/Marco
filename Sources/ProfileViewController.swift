@@ -9,67 +9,82 @@
 import UIKit
 import Foundation
 import Toucan
+import Firebase
 
-
-class timeline{
-    var timestamp: String
-    var description: String
-    
-    init(timestamp: String, description: String){
-        self.timestamp = timestamp
-        self.description = description
-    }
-    static func createDummy()->[timeline] {
-        return [ timeline(timestamp: "2016년 12월 1일", description:"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-                 timeline(timestamp: "2017년 2월 5일", description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-                 timeline(timestamp: "2017년 3월 1일", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
-        ]
-    }
-}
+//class timeline{
+//    var timestamp: String
+//    var description: String
+//    
+//    init(timestamp: String, description: String){
+//        self.timestamp = timestamp
+//        self.description = description
+//    }
+//    static func createDummy()->[timeline] {
+//        return [ timeline(timestamp: "2016년 12월 1일", description:"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+//                 timeline(timestamp: "2017년 2월 5일", description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+//                 timeline(timestamp: "2017년 3월 1일", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.")
+//        ]
+//    }
+//}
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var timelineTableView: UITableView!
     
-    let dummyData = timeline.createDummy()
+    @IBOutlet weak var profileImageVIew: UIImageView!
+    var dummyData: [post]?
+    
+    @IBOutlet weak var likenum: UIButton!
+    @IBOutlet weak var postnum: UIButton!
+    @IBOutlet weak var statusMessageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //midtoolbar.clipsToBounds = true
         
+        timelineTableView.separatorStyle = .none
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationItem.title = "석인"
         
-        timelineTableView.separatorStyle = .none
+        dummyData = DataController.sharedInstance().currentUserProfile.posts
         
-        //profileImage.image = Toucan( image: (UIImage(named: "profile")?.c-ircleMasked)! )
-        //    .resize(CGSize(width: 80, height: 80), fitMode: Toucan.Resize.FitMode.clip).image
+        if let current = FIRAuth.auth()?.currentUser {
+            self.navigationItem.title = current.displayName
+        }
+        
+        profileImageVIew.image = Toucan( image: (UIImage(named: "profile")?.circleMasked)! )
+            .resize(CGSize(width: 80, height: 80), fitMode: Toucan.Resize.FitMode.clip).image
+        
+        
+        
         
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return dummyData.count + 1
+        if dummyData?.count == 0 {
+            return 1
+        }
+        else {
+            return dummyData!.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath as NSIndexPath).row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Timeline Header Cell", for: indexPath) as! timelineHeaderTableViewCell
-            cell.profileImageView.image = Toucan( image: (UIImage(named: "profile")?.circleMasked)! )
-                .resize(CGSize(width: 80, height: 80), fitMode: Toucan.Resize.FitMode.clip).image
+
+        if dummyData?.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyTimelineCell", for: indexPath) as! emptyTimelineCell
             return cell
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "Timeline Cell", for: indexPath) as! timelineTableViewCell
-            let dummy = dummyData[(indexPath as NSIndexPath).row - 1]
+            let dummy = dummyData?[(indexPath as NSIndexPath).row]
             
-            cell.dateLabel.text = dummy.timestamp
+            cell.dateLabel.text = dummy?.dateString
             
             let pstyle = NSMutableParagraphStyle()
             pstyle.lineSpacing = 1.25
             pstyle.lineHeightMultiple = 1.25
-            let descriptionText = NSMutableAttributedString(string: dummy.description)
+            let descriptionText = NSMutableAttributedString(string: (dummy?.description)!)
             descriptionText.addAttribute(NSParagraphStyleAttributeName, value: pstyle, range: NSMakeRange(0, descriptionText.length))
             
             cell.descriptionLabel.attributedText = descriptionText

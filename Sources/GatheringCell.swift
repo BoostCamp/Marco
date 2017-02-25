@@ -15,3 +15,8 @@ class gatheringCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var gatherDescriptionLabel: UILabel!
     @IBOutlet weak var gatherStatusLabel: UILabel!
 }
+
+class gatheringPlusCell : UICollectionViewCell
+{
+
+}

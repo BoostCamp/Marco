@@ -21,6 +21,20 @@ class post {
     }
 }
 
+class review {
+    let writer: profile
+    let dateString: String
+    var isGood =  true
+    var description: String
+    
+    init(writer: profile, isGood: Bool, description: String, dateString: String){
+        self.writer = writer
+        self.isGood = isGood
+        self.description = description
+        self.dateString = dateString
+    }
+    
+}
 
 class profile {
     var name = ""
@@ -32,7 +46,9 @@ class profile {
     var image: UIImage!
     var location: CLLocation!
     var distanceFromCurrentUser: CLLocationDistance!
+    
     var posts: Array<post>
+    var reviews: Array<review>
     
     init(index: Int, name: String, description: String, image: UIImage, location: CLLocation){
         self.index = index
@@ -42,6 +58,7 @@ class profile {
         self.location = location
         
         self.posts = []
+        self.reviews = []
         self.distanceFromCurrentUser = 0.0
         postnum = 0
         likenum = 0
@@ -51,7 +68,7 @@ class profile {
     static func createDummy()->[profile] {
         var dummyData =  [ profile(index: 1, name:"민재",description:"Keep Calm,\n and Carry On",image: UIImage(named: "profile1")!,
                          location:  CLLocation(latitude: 51.517353,longitude: -0.143305) ),
-                 profile(index: 2, name:"지승", description:"청춘은 여행이다.\n처음으로 혼자 떠나는 여행", image: UIImage(named: "profile2")!,
+                 profile(index: 2, name:"노찌", description:"청춘은 여행이다.\n처음으로 혼자 떠나는 여행", image: UIImage(named: "profile2")!,
                          location: CLLocation(latitude: 51.528853, longitude:-0.112305) ),
                  profile(index: 3, name:"찐", description:"뚜벅이 여행 2개월차\n마이웨이",image: UIImage(named: "profile3")!,
                          location: CLLocation(latitude: 51.513853, longitude:-0.111305)),
@@ -63,7 +80,7 @@ class profile {
         dummyData[0].posts.append(post(dateString: "2017년 2월 22일", description: "밤새기 싫은데 밤을새고 있다.\n나는 밤을 새는 것이 좋고 행복하다."))
         dummyData[0].postnum += 1
         
-        dummyData[0].posts.append(post(dateString: "2017년 2월 21일", description: "Stack Overflow is a community of 6.8 million programmers, just like you, helping each other.\nJoin them; it only takes a minute: "))
+        dummyData[0].posts.append(post(dateString: "2017년 2월 21일", description: "대박! 길가다 베네딕트 컴배비치봄"))
         dummyData[0].postnum += 1
         
         return dummyData
@@ -81,6 +98,9 @@ class gathering {
     var locationString: String
     var location: CLLocation!
     
+    var members: [profile]
+    var comments: [comment]
+    
     init(name: String, dateString: String, locationString: String, description: String, image: UIImage, isClosed: Bool, location: CLLocation){
         self.name = name
         self.dateString = dateString
@@ -89,8 +109,10 @@ class gathering {
         self.image = image
         self.isClosed = isClosed
         self.location = location
-        
-        numOfMembers = 1
+
+        members = []
+        comments = []
+        numOfMembers = 0
         numOfComments = 0
     }
     
@@ -102,5 +124,16 @@ class gathering {
                  gathering(name:"브라이턴 기차 공동구매 4명!", dateString:"내일 10:00AM", locationString: "킹스크로스역",
                            description: "내일 세븐시스터즈 여행가시는 분들 중\n기차 예매 아직 안 하신 분들 계시나요??? 4명 모이면 15파운드에서 12.5파운드로 할인된다는데 같이 공동구매하실 분 모아여!\n일행 없으신 분들은 같이 세븐시스터즈 여행해도 좋을 것 같아여\n인생 샷도 좀 찍고.. 전 어차피 혼자라 ㅠㅠ 쥬륵..\n선착순 3명만 더 모집할게요! 아, 출발은 런던 빅토리아역 10시유", image: UIImage(named: "gathering3")!, isClosed: false, location: CLLocation(latitude: 51.5311983, longitude:-0.1457836 ))
         ]
+    }
+}
+
+class comment {
+    let writer: profile!
+    var description = ""
+    var dateString = ""
+    init ( writer: profile, description: String, dateString: String ){
+        self.writer = writer
+        self.description = description
+        self.dateString = dateString
     }
 }

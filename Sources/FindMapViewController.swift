@@ -32,10 +32,9 @@ class MarkerInfo {
 class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //var placeClient: GMSPlacesClient!
     
-    
-    
     let locationManager = CLLocationManager()
-    var dummyData = profile.createDummy()
+    //var dummyData = profile.createDummy()
+    var dummyData = DataController.sharedInstance().dummyProfile
     let pulse = Pulsator()
     
     private var mapView: GMSMapView!
@@ -55,7 +54,22 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
         self.navigationController?.navigationBar.backgroundColor = .white
+     
         
+        currentUserProfile = profile(index: 0, name: "석인", description: "집에가고싶다", image: UIImage(named: "profile")!, location: CLLocation(latitude: 51.512253, longitude: -0.123205) )
+        
+        dummyData = DataController.sharedInstance().dummyProfile
+        
+        for dummy in dummyData {
+            dummy.distanceFromCurrentUser = dummy.location.distance(from: currentUserProfile.location )
+        }
+        
+        dummyData = dummyData.sorted{ $0.distanceFromCurrentUser < $1.distanceFromCurrentUser }
+        
+        for i in 0...dummyData.count - 1 {
+            dummyData[i].index = i+1
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +89,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             otherMarkers = []
 
             //currentUserProfile.location = CLLocation(latitude: 51.512253, longitude: -0.123205)
-            
+            /*
             if let currentUserProfilePictureURL = FIRAuth.auth()?.currentUser?.photoURL {
                 Alamofire.request( currentUserProfilePictureURL ).responseImage { response in
                     //print(response)
@@ -95,8 +109,10 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
                 currentUserImage = UIImage(named: "default-user")
                 //self.currentUserProfileImage = currentUserImage
             }
+            */
+            currentUserProfile = profile(index: 0, name: "석인", description: "집에가고싶다", image: UIImage(named: "profile")!, location: CLLocation(latitude: 51.512253, longitude: -0.123205) )
             
-            currentUserProfile = profile(index: 0, name: (FIRAuth.auth()?.currentUser?.displayName) ?? "", description: "", image: currentUserImage, location: CLLocation(latitude: 51.512253, longitude: -0.123205) )
+            dummyData = DataController.sharedInstance().dummyProfile
             
             for dummy in dummyData {
                 dummy.distanceFromCurrentUser = dummy.location.distance(from: currentUserProfile.location )
@@ -158,7 +174,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             // Draw Marker
             
             let profileImage =
-                Toucan( image: currentUserImage )
+                Toucan( image: currentUserProfile.image.circleMasked! )
                 .resize(CGSize(width: 66.7, height: 66.7), fitMode: Toucan.Resize.FitMode.clip)
                 .maskWithEllipse(borderWidth: 7.0, borderColor: .white)
                 .maskWithEllipse(borderWidth: 3.5, borderColor: .untReddishOrange70).image
@@ -230,7 +246,7 @@ class FindMapViewController: UIViewController, CLLocationManagerDelegate, GMSMap
                     )
             
             
-            if i == 0 {
+            if i == selectedIndex {
                 otherMarker.icon = otherMarker.icon?.tint(tintColor: .untWarmBlue)
             }
             
@@ -351,6 +367,7 @@ extension FindMapViewController: UICollectionViewDataSource {
         cell.statusMessage.attributedText = descriptionText
         cell.statusMessage.textAlignment = .center
         //cell.statusMessage.text = prof.description
+        //cell.accessibilityElementsHidden = true
         
         //print("\(prof.postnum)")
         cell.postnum.setTitle("\(prof.postnum)", for: .normal)
